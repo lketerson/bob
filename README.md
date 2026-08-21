@@ -33,9 +33,44 @@ Detalhes de cada camada em [`spec/`](spec/).
 
 ## Quickstart
 
+### Novo projeto
+
 1. Aponte seu agente de IA para este repositório e peça para seguir [`start.md`](start.md).
-2. Se o projeto-alvo ainda não tem `.ai/`, isso dispara o bootstrap interativo (idioma, agentes, skills, MCPs) com preview obrigatório antes de gravar qualquer arquivo.
-3. Depois do bootstrap, use `/bob-start` a qualquer momento para ver o estado do framework e os comandos disponíveis.
+2. Rode `/bob-start`. Como não há `.ai/` nem histórico de Git prévio, o bootstrap interativo pode adotar a convenção padrão do framework diretamente, sem precisar perguntar sobre convenções já existentes.
+3. Responda as perguntas do bootstrap (idioma, board, agentes, skills, MCPs) e aprove o preview em `start.temp.md` antes da gravação definitiva.
+4. `.ai/` é criado do zero, já estruturado para o projeto.
+
+### Codebase existente
+
+1. Aponte seu agente de IA para este repositório e peça para seguir [`start.md`](start.md).
+2. Rode `/bob-start`. Antes de perguntar qualquer coisa, o framework faz a descoberta do repositório — stack, documentação, convenções de Git e de IA já existentes — para não sobrescrever nada às cegas ([`spec/13`](spec/13-descoberta-e-migracao.md)).
+3. Se já existir um `.ai/` (ou equivalente) de outra origem, `/bob-start` mostra o que foi encontrado e pergunta se você quer migrar para esta estrutura — nunca reorganiza silenciosamente.
+4. Segue o mesmo bootstrap interativo do fluxo de projeto novo, com preview em `start.temp.md` antes de gravar.
+5. Rode `/bob-map-codebase` para mapear `.ai/context/` com evidência real do repositório.
+
+### Comandos
+
+| Comando | Aciona |
+|---|---|
+| `/bob-start` | Entrypoint — bootstrap completo, orientação, retomada ou sincronização de versão |
+| `/bob-map-codebase` | Mapeia/atualiza `.ai/context/` com evidência do repositório |
+| `/bob-concerns` | Auditoria retrospectiva de SOLID, duplicação e nomenclatura |
+| `/bob-create-agent` | Cria um novo papel de agente |
+| `/bob-create-skill` | Cria uma skill técnica nova |
+| `/bob-add-skill` | Instala uma skill já existente de um marketplace |
+| `/bob-add-mcp` | Configura um novo servidor MCP |
+| `/bob-create-spec` | Cria uma nova spec de feature |
+| `/bob-validate` | Checklist de validação de `.ai/` (leitura) |
+| `/bob-techlead` | Orquestrador — decompõe a demanda e delega aos agentes |
+| `/bob-architect` | Plano de implementação / avaliação de alternativas |
+| `/bob-developer` | Implementação de uma tarefa pontual |
+| `/bob-reviewer` | Revisão de uma mudança já implementada |
+| `/bob-tester` | Estratégia e casos de teste |
+| `/bob-researcher` | Investigação e comparação técnica |
+| `/bob-security` | Análise de segurança focada |
+| `/bob-onboarding` (opcional) | Guia um novo dev pelo repositório via roteiro de estudo |
+
+Lista completa, com sintaxe e pré-condições de cada comando, em [`templates/commands/README.md`](templates/commands/README.md).
 
 ## Documentação
 

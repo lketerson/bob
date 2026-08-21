@@ -5,6 +5,15 @@ Versionamento deste repositório (a especificação-fonte), seguindo
 gerado em cada projeto-alvo, ver `.ai/CHANGELOG.md` daquele projeto e
 `spec/20-versionamento.md`.
 
+## [1.1.0] - 2026-08-21
+
+Divide o Quickstart do `README.md` em dois caminhos — "Novo projeto"
+(bootstrap direto, sem checagem de convenção de Git prévia) e "Codebase
+existente" (descoberta do repositório antes de qualquer pergunta,
+`/bob-map-codebase` ao final) — cada um com um guia curto de setup, e
+adiciona uma tabela com todos os comandos `/bob-*` invocáveis
+diretamente no Quickstart.
+
 ## [1.0.0] - 2026-08-21
 
 Primeira versão pública do BoB.
