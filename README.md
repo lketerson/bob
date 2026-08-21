@@ -44,7 +44,7 @@ Detalhes de cada camada em [`spec/`](spec/).
 
 1. Aponte seu agente de IA para este repositório e peça para seguir [`start.md`](start.md).
 2. Rode `/bob-start`. Antes de perguntar qualquer coisa, o framework faz a descoberta do repositório — stack, documentação, convenções de Git e de IA já existentes — para não sobrescrever nada às cegas ([`spec/13`](spec/13-descoberta-e-migracao.md)).
-3. Se já existir um `.ai/` (ou equivalente) de outra origem, `/bob-start` mostra o que foi encontrado e pergunta se você quer migrar para esta estrutura — nunca reorganiza silenciosamente.
+3. Se já existir um `.ai/` (ou equivalente) de outra origem, `/bob-start` mostra o que foi encontrado e pergunta se você quer migrar para esta estrutura — nunca reorganiza silenciosamente. Antes de prosseguir, deixa explícito que pode renomear arquivos e realocar informações, mas nunca alterar o conteúdo já existente, e pede sua confirmação; se o repositório ainda não estiver versionado, recomenda copiar a pasta antes de continuar, para permitir reverter.
 4. Segue o mesmo bootstrap interativo do fluxo de projeto novo, com preview em `start.temp.md` antes de gravar.
 5. Rode `/bob-map-codebase` para mapear `.ai/context/` com evidência real do repositório.
 

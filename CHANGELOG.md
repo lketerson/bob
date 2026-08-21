@@ -5,6 +5,19 @@ Versionamento deste repositório (a especificação-fonte), seguindo
 gerado em cada projeto-alvo, ver `.ai/CHANGELOG.md` daquele projeto e
 `spec/20-versionamento.md`.
 
+## [1.2.0] - 2026-08-21
+
+No fluxo de reorganização de um `.ai/` já existente mas não gerado pelo
+BoB (`spec/13-descoberta-e-migracao.md`), exige que o framework deixe
+explícito, antes de perguntar se o usuário quer migrar: que tem
+liberdade para renomear arquivos e realocar informações, mas não para
+alterar o conteúdo de informações já existentes; e que recomende
+versionamento (Git) ou cópia da pasta como backup antes de prosseguir,
+caso o repositório ainda não esteja versionado. Exige confirmação
+explícita do usuário dessas condições, distinta da aprovação do preview.
+Reflete o mesmo aviso, resumido, no passo 3 de "Codebase existente" do
+Quickstart do `README.md`.
+
 ## [1.1.0] - 2026-08-21
 
 Divide o Quickstart do `README.md` em dois caminhos — "Novo projeto"

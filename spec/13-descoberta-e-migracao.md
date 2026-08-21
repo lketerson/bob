@@ -78,7 +78,25 @@ sobrescrever esse diretório silenciosamente. Em vez disso:
    atual, o que parece cobrir) e como isso diverge da estrutura proposta
    por este framework.
 2. Perguntar explicitamente se o usuário deseja reorganizar o conteúdo
-   existente para a estrutura deste framework.
+   existente para a estrutura deste framework. Ao perguntar, o framework
+   DEVE deixar explícitas as seguintes condições, antes de aguardar a
+   resposta:
+   * O BoB tem liberdade para **renomear arquivos e realocar
+     informações** entre eles, como parte da reorganização.
+   * O BoB NÃO tem liberdade para **alterar o conteúdo de informações já
+     existentes** — mover e reorganizar, nunca reescrever, resumir,
+     remover ou inventar conteúdo (mesmo princípio de "Não copie tudo às
+     cegas" já vale para o inverso: também não descarte nem modifique
+     silenciosamente).
+   * É importante que o repositório já esteja versionado (Git), para que
+     a reorganização possa ser revertida caso o resultado não seja o
+     esperado. Se não estiver, o framework DEVE recomendar copiar a
+     pasta atual para um novo diretório antes de prosseguir, como forma
+     alternativa de backup.
+
+   O usuário DEVE confirmar explicitamente que está ciente dessas três
+   condições antes de o framework prosseguir. Essa confirmação é
+   distinta — e anterior — à aprovação do preview do passo 3.
 3. Se o usuário confirmar, migrar o conteúdo útil (mesmo princípio desta
    seção — "Resolva duplicações e contradições", "Não copie tudo às
    cegas") para a nova estrutura, mostrando o preview em `start.temp.md`
