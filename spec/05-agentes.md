@@ -249,6 +249,15 @@ más práticas de segurança, com foco em:
 * Outros ataques bem conhecidos e relevantes à stack identificada (ex.:
   XSS, SSRF, deserialização insegura, path traversal, exposição de
   stack trace/erro detalhado em produção).
+* Exposição a negação de serviço (DoS/DDoS) — ausência de rate
+  limiting/throttling em endpoints sensíveis ou computacionalmente
+  custosos, falta de limite de tamanho em payload/upload, consultas ou
+  listagens sem paginação/limite que permitem exaurir banco ou memória,
+  expressões regulares vulneráveis a ReDoS, ausência de timeout em
+  chamadas a serviços externos, e falta de proteção de borda (WAF/CDN/API
+  gateway) quando o ambiente de deploy permitir essa camada. O agente
+  reporta a vulnerabilidade e a mitigação sugerida — nunca executa ou
+  simula um ataque real.
 
 O agente Security DEVE priorizar achados por severidade e impacto real
 — não apenas listar categorias teóricas sem evidência concreta no

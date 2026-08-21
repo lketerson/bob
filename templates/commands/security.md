@@ -4,8 +4,8 @@
 
 Aciona diretamente o agente Security para uma análise focada em
 vazamento de segredos, tratamento de `.env`, injeção (SQL e afins),
-spoofing/falhas de autenticação, e demais categorias conhecidas de
-vulnerabilidade.
+spoofing/falhas de autenticação, exposição a negação de serviço
+(DoS/DDoS), e demais categorias conhecidas de vulnerabilidade.
 
 ## Sintaxe
 

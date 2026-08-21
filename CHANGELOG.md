@@ -5,6 +5,16 @@ Versionamento deste repositório (a especificação-fonte), seguindo
 gerado em cada projeto-alvo, ver `.ai/CHANGELOG.md` daquele projeto e
 `spec/20-versionamento.md`.
 
+## [1.3.0] - 2026-08-21
+
+O agente Security (`spec/05-agentes.md`) passa a identificar também
+exposição a negação de serviço (DoS/DDoS) — ausência de rate
+limiting, payloads/uploads sem limite de tamanho, consultas sem
+paginação, ReDoS, ausência de timeout em chamadas externas, falta de
+proteção de borda — reportando achado e mitigação sugerida, nunca
+executando ou simulando o ataque. Reflete a mesma categoria na descrição
+de `templates/commands/security.md` (`/bob-security`).
+
 ## [1.2.0] - 2026-08-21
 
 No fluxo de reorganização de um `.ai/` já existente mas não gerado pelo
