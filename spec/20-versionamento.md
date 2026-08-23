@@ -46,7 +46,7 @@ mudança concluída.
 
 Mantido em `.ai/CHANGELOG.md` (arquivo obrigatório — ver
 `02-estrutura-diretorios.md`), criado durante o bootstrap
-(`16-bootstrap-interativo.md`, Passo 7) com a entrada inicial:
+(`16-bootstrap-interativo.md`, Passo 8) com a entrada inicial:
 
 ```markdown
 ## [0.1.0] - AAAA-MM-DD

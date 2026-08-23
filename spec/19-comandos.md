@@ -90,7 +90,7 @@ existir — todos os demais comandos pressupõem `.ai/` já criado (por
 
 | Comando | Aciona | Preview obrigatório (`[slug].temp.md`)? |
 |---|---|---|
-| `/bob-start` | Bootstrap completo (`16`) na primeira vez; menu de orientação, confirmação de reorganização, retomada de bootstrap incompleto, ou sincronização de versão, nas seguintes (`13`, `20`) | Sim, como `start.temp.md` — no bootstrap (`16`, Passo 7), na reorganização de um `.ai/` não-framework, na retomada de bootstrap incompleto (`13`), e na sincronização de versão (`20`) |
+| `/bob-start` | Bootstrap completo (`16`) na primeira vez; menu de orientação, confirmação de reorganização, retomada de bootstrap incompleto, ou sincronização de versão, nas seguintes (`13`, `20`) | Sim, como `start.temp.md` — no bootstrap (`16`, Passo 8), na reorganização de um `.ai/` não-framework, na retomada de bootstrap incompleto (`13`), e na sincronização de versão (`20`) |
 | `/bob-map-codebase` | Agente Mapper + workflow de mapeamento (`10`) | Não — ver exceção abaixo |
 | `/bob-concerns` | Agente Mapper + workflow de concerns — auditoria retrospectiva que PODE identificar violações de camada/SOLID, duplicação e nomenclatura já existentes (a aplicação proativa de SOLID/DIP/SRP durante o design e a implementação é responsabilidade contínua de Architect/Developer/Techlead — ver `05-agentes.md` — não deste comando) | Não — ver exceção abaixo |
 | `/bob-create-agent` | Criação de um novo papel de agente em `.ai/agents/` (`05`) | Sim, como `create-agent.temp.md` |
@@ -196,10 +196,10 @@ na conversa (ex.: "siga `.ai/commands/bob-map-codebase.md`").
 ## Regra de preview
 
 Todo comando que cria ou altera arquivo em `.ai/`, em um adaptador, ou em
-configuração de ferramenta (ex.: MCP), ou que reorganiza um `.ai/`
-pré-existente não-framework (`13-descoberta-e-migracao.md`), DEVE seguir
-a mesma regra de preview obrigatório já estabelecida em
-`16-bootstrap-interativo.md`, Passo 7 — não apenas durante o bootstrap.
+configuração de ferramenta (ex.: MCP, barra de status), ou que reorganiza
+um `.ai/` pré-existente não-framework (`13-descoberta-e-migracao.md`),
+DEVE seguir a mesma regra de preview obrigatório já estabelecida em
+`16-bootstrap-interativo.md`, Passo 8 — não apenas durante o bootstrap.
 
 **Nome do arquivo de preview:** `[slug].temp.md`, na raiz do
 projeto-alvo, onde `slug` é o nome do comando sem o prefixo `bob-` (ex.:

@@ -35,6 +35,9 @@ Sugerir e perguntar ao usuário: quais MCPs habilitar
         ↓
 Perguntar ao usuário: escopo da configuração MCP (local ou global)
         ↓
+Se a ferramenta suportar: perguntar ao usuário se deseja configurar
+uma barra de status (status line)
+        ↓
 Gerar preview em start.temp.md e aguardar aprovação
         ↓
 Criar os arquivos definitivos em .ai/ e nos adaptadores
@@ -313,11 +316,59 @@ ferramenta em uso antes de gravar qualquer configuração:
   `.claude/settings.json`, quando committed, guarda apenas permissões —
   nunca segredos ou configuração de MCP.
 
-## Passo 7 — Preview obrigatório antes de gravar
+## Passo 7 — Barra de status (status line)
+
+Algumas ferramentas de IA permitem configurar uma barra de status
+personalizada (ex.: rodapé do terminal) exibindo informações como o
+modelo em uso, o consumo da janela de contexto, a branch Git atual e
+limites de uso (rate limits). O Claude Code é um exemplo — expõe esses
+dados via um payload JSON (modelo, janela de contexto, rate limits,
+diretório atual) enviado por stdin a um comando configurável em
+`.claude/settings.json` (`statusLine.command`).
+
+O agente DEVE primeiro confirmar se a ferramenta de IA em uso suporta
+esse tipo de configuração — NÃO assuma. Se não suportar, ou não for
+possível confirmar, pule este passo sem perguntar nada ao usuário.
+
+Quando suportado, perguntar: **"Deseja configurar uma barra de status
+personalizada, mostrando modelo em uso e consumo da janela de contexto
+(e, quando disponível, branch Git e limites de uso)?"**
+
+Se o usuário confirmar, propor como default o adaptador pronto em
+`templates/adapters/statusline.js` (`bob_framework`) — que exibe, nesta
+ordem: modelo em uso | consumo da janela de contexto (barra de
+progresso + tokens) | branch Git atual | consumo do limite de 5 horas
+(barra de progresso + horário de reset) | consumo do limite semanal
+(barra de progresso + dia/horário de reset). Este default reflete a
+barra de status já validada no ambiente de referência deste framework —
+o usuário é livre para pedir menos campos, outra ordem, ou outras cores;
+o script é só um ponto de partida, não uma prescrição fechada.
+
+Perguntar também o escopo da configuração, mesmo critério do Passo 6:
+
+* **Local** — `.claude/settings.json` e o script dentro do próprio
+  projeto-alvo (ex.: `.claude/statusline.js`).
+* **Global** — `~/.claude/settings.json` e o script ao nível de
+  usuário, fora do projeto-alvo, valendo para todos os projetos na
+  máquina.
+
+Assim como a configuração de MCP (Passo 6), o script e a entrada
+`statusLine` de `settings.json` NUNCA vão para `.ai/` — `.ai/` permanece
+agnóstico de ferramenta (`11-adaptadores.md`). Registrar apenas a
+decisão (habilitado/desabilitado, escopo) em
+`.ai/context/integrations.md`, seção "Ferramentas de IA".
+
+Se a ferramenta em uso não for Claude Code mas suportar um mecanismo
+equivalente, o agente DEVE adaptar o adaptador ao formato real daquela
+ferramenta — nunca assumir que o formato do Claude Code (JSON via
+stdin, `.claude/settings.json`) se aplica genericamente.
+
+## Passo 8 — Preview obrigatório antes de gravar
 
 Antes de criar qualquer arquivo definitivo desta etapa — constituição,
-instruções, agentes, skills, workflows, ou configuração de MCP — gerar um
-arquivo `start.temp.md` (na raiz do projeto-alvo) contendo:
+instruções, agentes, skills, workflows, configuração de MCP, ou
+configuração de barra de status — gerar um arquivo `start.temp.md` (na
+raiz do projeto-alvo) contendo:
 
 * A lista de arquivos que serão criados/alterados, com o caminho final de
   cada um.

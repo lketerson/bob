@@ -66,6 +66,23 @@ agente por chamada linear sequencial, ou orienta o dev a usar o comando
 `/bob-[nome-do-agente]` correspondente (`spec/19-comandos.md`, "Comandos
 de agente") — nunca falha silenciosamente por falta desse suporte.
 
+### Barra de status (status line)
+
+Ferramentas de IA que suportam uma barra de status configurável (ex.:
+Claude Code, via `statusLine` em `.claude/settings.json`) PODEM receber
+um script adaptador exibindo modelo em uso, consumo de janela de
+contexto, branch Git e limites de uso — nunca conhecimento canônico, só
+uma conveniência de interface. O framework fornece um default pronto em
+`templates/adapters/statusline.js` para Claude Code. Esta configuração é
+opcional e perguntada ao dev durante o bootstrap
+(`16-bootstrap-interativo.md`, Passo 7) — diferente do suporte a
+multiagentes acima, NÃO é habilitada automaticamente, pois altera a
+interface visível ao dev.
+
+Ferramentas sem esse recurso, ou quando o dev não confirma suporte,
+simplesmente não recebem esse adaptador — sua ausência nunca bloqueia o
+uso do framework.
+
 ## Independência de Provedor
 
 O framework NÃO DEVE depender de:

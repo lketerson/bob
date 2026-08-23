@@ -37,7 +37,7 @@ Detalhes de cada camada em [`spec/`](spec/).
 
 1. Aponte seu agente de IA para este repositório e peça para seguir [`start.md`](start.md).
 2. Rode `/bob-start`. Como não há `.ai/` nem histórico de Git prévio, o bootstrap interativo pode adotar a convenção padrão do framework diretamente, sem precisar perguntar sobre convenções já existentes.
-3. Responda as perguntas do bootstrap (idioma, board, agentes, skills, MCPs) e aprove o preview em `start.temp.md` antes da gravação definitiva.
+3. Responda as perguntas do bootstrap (idioma, board, agentes, skills, MCPs, barra de status) e aprove o preview em `start.temp.md` antes da gravação definitiva.
 4. `.ai/` é criado do zero, já estruturado para o projeto.
 
 ### Codebase existente

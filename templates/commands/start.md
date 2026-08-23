@@ -43,7 +43,7 @@ Nenhuma — é o único comando do framework que pode ser executado antes de
 
 1. Verificar se `.ai/` existe no projeto-alvo.
 2. Se não existir, seguir `spec/13` e depois `spec/16` integralmente,
-   incluindo o preview obrigatório em `start.temp.md` (Passo 7) antes de
+   incluindo o preview obrigatório em `start.temp.md` (Passo 8) antes de
    gravar qualquer arquivo definitivo — incluindo `.ai/CHANGELOG.md`
    (entrada inicial) e o carimbo de versão em `.ai/README.md`
    (`spec/20-versionamento.md`).

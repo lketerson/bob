@@ -101,7 +101,7 @@ sobrescrever esse diretório silenciosamente. Em vez disso:
    seção — "Resolva duplicações e contradições", "Não copie tudo às
    cegas") para a nova estrutura, mostrando o preview em `start.temp.md`
    antes de gravar qualquer coisa definitiva (mesma regra de
-   `spec/16-bootstrap-interativo.md`, Passo 7, e `spec/19-comandos.md`).
+   `spec/16-bootstrap-interativo.md`, Passo 8, e `spec/19-comandos.md`).
 4. Se o usuário recusar, não alterar nada — continuar operando a partir
    da estrutura existente, sem forçar a migração.
 

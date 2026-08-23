@@ -37,6 +37,30 @@ onde a configuração é referenciada (o `nome da variável`, não o valor).
 
 <!-- Filas, eventos, webhooks, jobs agendados — se existirem. -->
 
+## Ferramentas de IA
+
+<!--
+Decisões tomadas durante o bootstrap (16-bootstrap-interativo.md) sobre
+ferramentas de suporte ao agente de IA — não são integrações do produto
+em si, mas registradas aqui pelo mesmo motivo: a configuração de conexão
+real vive fora de `.ai/`, no arquivo específico da ferramenta
+(11-adaptadores.md). Preencher apenas o que o dev de fato aprovou.
+-->
+
+### Board / rastreamento de trabalho
+
+<!-- Ferramenta usada (ex.: Azure Boards, Jira, GitHub Projects, Trello), e se foi criada manualmente ou via MCP. -->
+
+### Servidores MCP habilitados
+
+| MCP | Propósito | Escopo (local/global) |
+|---|---|---|
+| | | |
+
+### Barra de status (status line)
+
+<!-- Se configurada: ferramenta de IA, escopo (local/global), e onde vive o adaptador (ex.: `.claude/settings.json` + `.claude/statusline.js`). -->
+
 ## Segredos e configuração sensível
 
 <!--

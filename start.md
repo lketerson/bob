@@ -49,7 +49,7 @@ Templates prontos para copiar (agente mapper, workflow de mapeamento, e os 9 tem
 
 **Adicionar um novo agente, skill ou spec a um `.ai/` já existente:** leia apenas `spec/01` e o arquivo correspondente (`spec/05`, `spec/06` ou `spec/07`).
 
-**Adicionar o sistema de comandos a um `.ai/` já existente:** leia `spec/19` e copie `templates/commands/` seguindo `README.md` deste diretório, item 1c.
+**Adicionar o sistema de comandos a um `.ai/` já existente:** leia `spec/19` e copie `templates/commands/` para `.ai/commands/`, renomeando cada arquivo (exceto `README.md`) com o prefixo `bob-` (ex.: `templates/commands/start.md` → `.ai/commands/bob-start.md`).
 
 **Auditar/validar um `.ai/` já criado:** leia `spec/14`.
 

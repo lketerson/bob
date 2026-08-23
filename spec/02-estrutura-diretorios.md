@@ -99,4 +99,4 @@ CLAUDE.md
 └── copilot-instructions.md
 ```
 
-Os adaptadores DEVEM permanecer mínimos e DEVEM referenciar os arquivos canônicos em `.ai/`. Ferramentas de IA com suporte nativo a comandos (slash commands) recebem também um adaptador mínimo por comando de `.ai/commands/`, apontando de volta para o arquivo canônico — ver `spec/11-adaptadores.md`, seção "Comandos".
+Os adaptadores DEVEM permanecer mínimos e DEVEM referenciar os arquivos canônicos em `.ai/`. Ferramentas de IA com suporte nativo a comandos (slash commands) recebem também um adaptador mínimo por comando de `.ai/commands/`, apontando de volta para o arquivo canônico — ver `spec/11-adaptadores.md`, seção "Comandos". Ferramentas com suporte a barra de status configurável (ex.: `.claude/settings.json` do Claude Code) PODEM opcionalmente receber o script de `templates/adapters/statusline.js`, quando aprovado pelo dev no bootstrap — ver `spec/11-adaptadores.md`, seção "Barra de status", e `spec/16-bootstrap-interativo.md`, Passo 7.

@@ -5,6 +5,21 @@ Versionamento deste repositório (a especificação-fonte), seguindo
 gerado em cada projeto-alvo, ver `.ai/CHANGELOG.md` daquele projeto e
 `spec/20-versionamento.md`.
 
+## [1.4.0] - 2026-08-23
+
+Novo Passo 7 no bootstrap interativo (`spec/16-bootstrap-interativo.md`):
+pergunta ao dev, apenas quando a ferramenta de IA em uso suportar (ex.:
+Claude Code), se deseja configurar uma barra de status (status line)
+mostrando modelo, consumo de janela de contexto, branch Git e limites de
+uso, com escopo local/global igual ao das demais decisões de ferramenta.
+Adiciona o adaptador default pronto para copiar em
+`templates/adapters/statusline.js` (`spec/11-adaptadores.md`, nova seção
+"Barra de status"), e a seção "Ferramentas de IA" — antes ausente — em
+`templates/context/integrations.md`, onde a decisão (habilitado/
+desabilitado, escopo) é registrada, junto ao board e aos MCPs já
+previstos ali. Corrige também, em `start.md`, a referência a um "item 1c"
+do `README.md` que não existe mais na versão atual do Quickstart.
+
 ## [1.3.0] - 2026-08-21
 
 O agente Security (`spec/05-agentes.md`) passa a identificar também
