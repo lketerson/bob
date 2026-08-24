@@ -15,6 +15,10 @@
 
 BoB é uma especificação que um agente de IA lê para criar e manter `.ai/` — a fonte única de verdade de engenharia de IA de um projeto (constituição, agentes, skills, specs, workflows, comandos e contexto), agnóstica de stack e de provedor de IA. Ferramentas específicas (Claude, Copilot, etc.) recebem só um adaptador mínimo apontando de volta para `.ai/`, nunca uma cópia divergente.
 
+## Motivação
+
+A evolução rápida da IA trouxe um crescimento desenfreado de documentação nos repositórios, sem um padrão comum: cada desenvolvedor acaba montando seu próprio setup, gerando resultados destoantes entre pessoas do mesmo time. BoB nasceu para resolver isso — uma única fonte de verdade de engenharia de IA por projeto, que qualquer agente e qualquer desenvolvedor segue da mesma forma.
+
 ## Como funciona
 
 ```text
