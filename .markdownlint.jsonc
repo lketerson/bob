@@ -1,0 +1,21 @@
+{
+  // Regras padrão do markdownlint, com exceções para o estilo já em uso
+  // no repositório (prosa longa, HTML inline em templates, listas com "-").
+  "default": true,
+
+  // Prosa em português não segue limite de 80 colunas por linha.
+  "MD013": false,
+  // spec/ e templates/ usam `<algo>` como placeholder de conteúdo a
+  // preencher — não é HTML real, mas o linter não distingue.
+  "MD033": false,
+  // O repo mistura "*" (bullets normais) e "-" (checklists) de propósito.
+  "MD004": false,
+  // Falso positivo em listas dentro de blocos de código/callout.
+  "MD032": false,
+  // README.md abre com um <div align="center"> antes do H1, de propósito.
+  "MD041": false,
+  // README.md indenta o H1 dentro do <div> centralizado, de propósito.
+  "MD023": false,
+  // Títulos como "Onde encontrar..." usam reticências de propósito.
+  "MD026": false
+}
