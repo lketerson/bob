@@ -1,0 +1,30 @@
+name: Proposta de mudança
+description: Sugerir algo novo, melhorar algo existente, ou propor a remoção de algo da spec.
+title: "[proposta] "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Tipo
+      description: Mesma classificação usada nos tipos de branch (CONTRIBUTING.md).
+      options:
+        - "add — algo que não existe hoje"
+        - "improve — melhora algo existente sem mudar o que ele faz"
+        - "remove — remove algo existente"
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivação
+      description: Qual problema isso resolve? Por que é necessário?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposta
+      description: O que deveria mudar, e em qual(is) arquivo(s) de spec/ ou templates/.
+    validations:
+      required: true

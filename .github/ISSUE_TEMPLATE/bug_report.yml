@@ -1,0 +1,36 @@
+name: Bug report
+description: Um comportamento da spec, template ou comando `/bob-*` está incorreto ou inconsistente.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Antes de abrir, procure nas issues existentes se isso já não foi reportado.
+  - type: textarea
+    id: description
+    attributes:
+      label: O que está incorreto
+      description: Descreva o comportamento incorreto e em qual arquivo/spec/comando ele aparece.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento esperado
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Como reproduzir
+      description: Passos, comando `/bob-*` usado, ferramenta de IA (Claude Code, etc.).
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: Versão do BoB
+      description: Ver `CHANGELOG.md` — ex. 1.4.0.
+    validations:
+      required: false
