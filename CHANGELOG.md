@@ -5,6 +5,13 @@ Versionamento deste repositório (a especificação-fonte), seguindo
 gerado em cada projeto-alvo, ver `.ai/CHANGELOG.md` daquele projeto e
 `spec/20-versionamento.md`.
 
+## [1.4.1] - 2026-08-28
+
+Adiciona o badge de status do CI (`.github/workflows/ci.yml`) ao header
+do `README.md`, ao lado dos badges já existentes de licença e de stars —
+agora que existe um workflow de CI real (lint de markdown + checagem de
+links), ele fica visível a quem chega no repositório.
+
 ## [1.4.0] - 2026-08-23
 
 Novo Passo 7 no bootstrap interativo (`spec/16-bootstrap-interativo.md`):

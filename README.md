@@ -5,6 +5,7 @@
 
   <em>Build on Base.</em>
 
+  [![CI](https://github.com/lketerson/bob/actions/workflows/ci.yml/badge.svg)](https://github.com/lketerson/bob/actions/workflows/ci.yml)
   [![License](https://img.shields.io/github/license/lketerson/bob)](LICENSE)
   [![GitHub stars](https://img.shields.io/github/stars/lketerson/bob?style=flat)](https://github.com/lketerson/bob/stargazers)
 </div>
