@@ -5,6 +5,30 @@ Versionamento deste repositório (a especificação-fonte), seguindo
 gerado em cada projeto-alvo, ver `.ai/CHANGELOG.md` daquele projeto e
 `spec/20-versionamento.md`.
 
+## [1.5.0] - 2026-08-28
+
+Fecha a lacuna de saúde comunitária do repositório no GitHub e cobre
+duas mudanças anteriores que tinham ficado sem entrada no changelog:
+
+- `CONTRIBUTING.md`: fluxo de contribuição issue-first, os quatro tipos
+  de branch (`add`/`remove`/`improve`/`fix`) e a regra de versionamento
+  que mapeia cada tipo para `x.y.z` — `fix`/`improve` sobem o patch,
+  `add`/`remove` sobem o minor, major é sempre decisão manual (retroativo
+  ao commit que introduziu o `CONTRIBUTING.md`).
+- `README.md`: seção "Motivação" explicando por que o BoB existe
+  (retroativo).
+- `.github/ISSUE_TEMPLATE/` e `.github/PULL_REQUEST_TEMPLATE.md`:
+  estruturam o fluxo já definido no `CONTRIBUTING.md` (bug report /
+  proposta de mudança, checklist de PR) em vez de depender de prosa.
+- `.github/workflows/ci.yml` + `.markdownlint.jsonc`: lint de markdown e
+  checagem de links (internos e externos) em todo push/PR.
+- `CODE_OF_CONDUCT.md`: adaptado do Contributor Covenant 2.1, fechando o
+  checklist de "Community Standards" do GitHub junto com
+  `CONTRIBUTING.md`/`LICENSE`.
+- `.github/workflows/release.yml`: cria tag e GitHub Release
+  automaticamente a partir da entrada mais recente deste arquivo a cada
+  push em `master`, usado pela primeira vez na v1.4.1.
+
 ## [1.4.1] - 2026-08-28
 
 Adiciona o badge de status do CI (`.github/workflows/ci.yml`) ao header
