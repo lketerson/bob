@@ -82,6 +82,7 @@ Lista completa, com sintaxe e pré-condições de cada comando, em [`templates/c
 - [`spec/`](spec/) — a especificação completa, dividida por tema
 - [`templates/`](templates/) — conteúdo pronto para copiar para `.ai/` durante o bootstrap
 - [`templates/commands/README.md`](templates/commands/README.md) — lista de comandos `/bob-*`
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) — como contribuir com este repositório
 
 ## FAQ
 
