@@ -30,5 +30,6 @@ jobs:
             --no-progress
             --max-retries 3
             --retry-wait-time 5
+            --exclude "github\.com/.+/stargazers$"
             "**/*.md"
           fail: true

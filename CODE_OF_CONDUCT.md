@@ -54,7 +54,7 @@ representa oficialmente o projeto em espaços públicos.
 
 Casos de comportamento abusivo, de assédio, ou de outra forma inaceitável
 podem ser reportados aos responsáveis pelo projeto em
-**lucasketerson@gmail.com**. Todas as denúncias serão analisadas e
+[lucasketerson@gmail.com](mailto:lucasketerson@gmail.com). Todas as denúncias serão analisadas e
 investigadas de forma pronta e justa, respeitando a privacidade e a
 segurança de quem reportou o incidente.
 
