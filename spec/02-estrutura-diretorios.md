@@ -63,7 +63,16 @@ Crie a seguinte estrutura:
 │   ├── bob-tester.md
 │   ├── bob-researcher.md
 │   ├── bob-security.md
-│   └── bob-onboarding.md           (opcional — só se o agente Onboarding foi aprovado)
+│   ├── bob-onboarding.md           (opcional — só se o agente Onboarding foi aprovado)
+│   ├── bob-us-create.md            (opcional — só se o fluxo de US/Cards foi adotado)
+│   ├── bob-us-edge-cases.md        (opcional — idem)
+│   ├── bob-us-plan.md              (opcional — idem)
+│   ├── bob-us-to-task.md           (opcional — idem)
+│   ├── bob-us-task-implement.md    (opcional — idem)
+│   ├── bob-us-task-pr.md           (opcional — idem)
+│   ├── bob-us-sync-pr.md           (opcional — idem)
+│   ├── bob-us-pr-review.md         (opcional — idem)
+│   └── bob-us-pr-adjust.md         (opcional — idem)
 │
 ├── context/
 │   ├── project-overview.md

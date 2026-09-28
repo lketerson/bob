@@ -5,6 +5,22 @@ Versionamento deste repositório (a especificação-fonte), seguindo
 gerado em cada projeto-alvo, ver `.ai/CHANGELOG.md` daquele projeto e
 `spec/20-versionamento.md`.
 
+## [1.6.0] - 2026-09-28
+
+Adiciona um incremento opcional de SDD: `spec/21-us-e-cards.md`
+formaliza a Fase 1 (Descoberta/Pesquisa) num artefato próprio de User
+Story (`us.md`, `templates/specs/us.md`) que alimenta o `spec.md` já
+existente, e enriquece o formato de task (agora também chamado de
+"card") com campos opcionais em `templates/specs/tasks.md` (Exemplo de
+implementação, Contrato, Esforço/Risco, Referência). Nove novos
+comandos (`/bob-us-create` a `/bob-us-pr-adjust`) cobrem esse fluxo de
+ponta a ponta, incluindo abertura de PR de task e de sync de múltiplas
+entregas. `spec/18-board-e-branch.md` generaliza a seção de "epic como
+sync" para cobrir também US, e ganha uma seção nova para sync de
+múltiplas entregas antes de produção. Nada disso é obrigatório — é uma
+camada opcional sobre o fluxo de SDD já existente, sem dependência de
+ferramenta externa (nem speckit, nem skills de outro plugin/monorepo).
+
 ## [1.5.0] - 2026-08-28
 
 Fecha a lacuna de saúde comunitária do repositório no GitHub e cobre

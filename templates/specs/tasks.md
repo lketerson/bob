@@ -39,6 +39,16 @@ fica a critério do projeto, não é uma lista fechada.
 * **Branch:** <!-- preenchido ao iniciar a implementação, quando o projeto usa branch dedicada (18-board-e-branch.md) -->
 * **PR/Commit(s):** <!-- preenchido ao final da implementação — link do PR ou hash(es) do(s) commit(s) que a implementaram, mesmo sem PR -->
 
+<!--
+Campos opcionais abaixo — só preencher quando o projeto adota o fluxo
+de US/Cards (21-us-e-cards.md). Quem não adota, ignora estes campos.
+-->
+
+* **Exemplo de implementação:** <!-- trecho de código ilustrativo, quando ajuda a fixar a intenção -->
+* **Contrato:** <!-- request/response, payload, ou assinatura afetada, quando esta tarefa expõe uma interface -->
+* **Esforço/Risco:** <!-- estimativa e nível de risco, ex.: "3 pontos | Risco: Médio" -->
+* **Referência:** <!-- seção específica de spec.md/us.md que esta tarefa implementa -->
+
 ## Mapa de Execução Paralela
 
 <!-- Quais tarefas podem rodar em paralelo (sem dependência entre si). -->

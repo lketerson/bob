@@ -107,19 +107,47 @@ Esse vocabulário de `<tipo>` é um ponto de partida, não uma lista fechada
 documentada em `.ai/instructions/git.md`. O `<slug>` (descrição curta,
 kebab-case) fica a critério do projeto.
 
-### Branch de epic como sync (opcional)
+### Branch de sync (epic ou US, opcional)
 
-Se o time trabalhar com **epics** — um nível de agrupamento acima da User
-Story — a branch da epic PODE funcionar como branch de sincronização
-(sync) de todas as branches de task/US geradas para aquela epic: as
-branches de task/US fazem merge na branch da epic, não diretamente na
-branch de release/main; só ao final é que a branch da epic faz merge em
-prod/main.
+Se o time trabalhar com **epics** e/ou com o artefato de **User Story
+(US)** formal de `21-us-e-cards.md` — ambos são um nível de
+agrupamento acima da task individual — a branch do agrupador (epic ou
+US) PODE funcionar como branch de sincronização (sync) de todas as
+branches de task geradas para aquele agrupador: as branches de task
+fazem merge na branch do agrupador, não diretamente na branch de
+release/main; só ao final é que essa branch faz merge em prod/main.
+
+Convenção de nome: mesmo padrão `<tipo>/<id>-<slug>` já definido acima
+— ex.: `us/1234-login-dispositivo` ou `epic/1234-login`.
 
 Isso é condicional: só se aplica quando o projeto efetivamente trabalha
-com epics. Na ausência de epics, o fluxo padrão continua sendo o descrito
-acima — branches de task indo direto para o caminho de release, conforme
-o diagrama.
+com epics ou com o artefato de US. Na ausência dos dois, o fluxo padrão
+continua sendo o descrito acima — branches de task indo direto para o
+caminho de release, conforme o diagrama.
+
+### Branch de sync de múltiplas entregas (opcional)
+
+Diferente da seção anterior (sync de UMA epic/US com suas próprias
+tasks), esta cobre agregar **várias entregas já integradas e
+aprovadas** — potencialmente sem relação entre si — numa branch
+compartilhada antes de ir para produção, tipicamente para testar tudo
+junto em homologação/QA antes de um lançamento conjunto.
+
+Convenção de nome: `sync/<destino>-<slug>` (ex.:
+`sync/release-login-onboarding`), sempre em minúsculas, consistente
+com o restante deste arquivo.
+
+O PR de sync (`/bob-us-sync-pr`, quando o projeto adota
+`21-us-e-cards.md`) segue o mesmo processo de Pull Request desta
+seção (draft, gates, reviewer perguntado) — a diferença é só o
+conteúdo da descrição, que lista cada entrega e os PRs aprovados que a
+compõem (ver exemplo em `21-us-e-cards.md`), não um diff próprio de
+código (a mudança já foi revisada PR a PR).
+
+Isso é condicional: só se aplica quando o projeto de fato precisa
+agregar múltiplas entregas antes de produção. Na ausência dessa
+necessidade, cada entrega segue seu próprio caminho direto até o
+destino.
 
 ## Pull Request
 

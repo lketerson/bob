@@ -70,6 +70,24 @@ Use estes comandos diretamente quando quiser um papel específico sem
 passar pela orquestração do `/bob-techlead`, ou quando a ferramenta de IA
 em uso não suportar invocação nativa de múltiplos agentes.
 
+## Comandos de US/Cards (opcional)
+
+Só existem se o projeto adotou o fluxo de `21-us-e-cards.md`: formaliza
+a User Story num artefato próprio (`us.md`) antes da spec técnica, e
+enriquece as tasks com o formato de card.
+
+| Comando | O que faz |
+|---|---|
+| `/bob-us-create` | Cria `us.md` com o happy path da User Story. |
+| `/bob-us-edge-cases` | Completa `us.md` com os edge cases, via perguntas ao usuário. |
+| `/bob-us-plan` | Gera `spec.md` a partir do `us.md` aprovado. |
+| `/bob-us-to-task` | Quebra a spec em cards em `tasks.md`. |
+| `/bob-us-task-implement` | Implementa uma task/card. |
+| `/bob-us-task-pr` | Abre o PR de uma task/card, alvo = branch da US. |
+| `/bob-us-sync-pr` | Abre o PR de sync de múltiplas entregas. |
+| `/bob-us-pr-review` | Revisão consultiva de um PR (papel `reviewer`). |
+| `/bob-us-pr-adjust` | Implementa ajuste de PR a partir do review. |
+
 ## Estrutura de um comando (e como adicionar um novo)
 
 Todo comando é um arquivo `.ai/commands/bob-<nome>.md`, seguindo:

@@ -109,8 +109,8 @@ Onboarding foi aprovado durante o bootstrap
 
 ### Fonte única de verdade da lista de comandos
 
-A tabela acima e a de "Comandos de agente" (abaixo) são a fonte canônica
-da lista de comandos do framework. `templates/commands/README.md` e a
+A tabela acima, a de "Comandos de agente" e a de "Comandos de US/Cards"
+(abaixo) são a fonte canônica da lista de comandos do framework. `templates/commands/README.md` e a
 árvore de `commands/` em `02-estrutura-diretorios.md` DEVEM espelhar
 exatamente os mesmos comandos (nome e, no caso do primeiro, descrição de
 uma linha) — qualquer comando adicionado, removido ou renomeado aqui DEVE
@@ -140,6 +140,23 @@ de múltiplos agentes (`11-adaptadores.md`, "Suporte a multiagentes"):
 
 Nenhum desses comandos requer preview em `[slug].temp.md` — são
 invocações de agente, não criação/alteração de arquivo de `.ai/`.
+
+## Comandos de US/Cards (opcional)
+
+Só existem se o projeto adotou o fluxo de `21-us-e-cards.md` — mesma
+condição de existência opcional já usada para `/bob-onboarding`.
+
+| Comando | Aciona | Preview obrigatório (`[slug].temp.md`)? |
+|---|---|---|
+| `/bob-us-create` | Cria `us.md` com o happy path da User Story (`21-us-e-cards.md`) | Sim, como `us-create.temp.md` |
+| `/bob-us-edge-cases` | Completa `us.md` com os edge cases, via perguntas ao usuário | Sim, como `us-edge-cases.temp.md` |
+| `/bob-us-plan` | Gera `spec.md` (Fase 2) a partir do `us.md` aprovado | Sim, como `us-plan.temp.md` |
+| `/bob-us-to-task` | Quebra a spec em cards em `tasks.md` (Fase 3) | Sim, como `us-to-task.temp.md` |
+| `/bob-us-task-implement` | Implementa uma task/card (Fase 4) | Não — implementação de código, mesma natureza de `/bob-developer` |
+| `/bob-us-task-pr` | Abre o PR de uma task/card, alvo = branch da US | Não — segue os gates já existentes de `18-board-e-branch.md` |
+| `/bob-us-sync-pr` | Abre o PR de sync de múltiplas entregas | Não — idem |
+| `/bob-us-pr-review` | Revisão consultiva de um PR (papel `reviewer`) | Não — invocação de agente, consultiva |
+| `/bob-us-pr-adjust` | Implementa ajuste de PR a partir do review | Não — implementação de código, mesma natureza de `/bob-developer` |
 
 ## Estrutura de um arquivo de comando
 

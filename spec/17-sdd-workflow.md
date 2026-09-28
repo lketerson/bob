@@ -40,6 +40,12 @@ Gate: se a User Story não tiver critério de aceite claro nem dono de
 negócio identificável, sinalizar isso ao usuário antes de prosseguir —
 não adivinhar o objetivo de negócio.
 
+**Formalização opcional:** quando o projeto adota
+`21-us-e-cards.md`, esta fase produz um artefato próprio (`us.md`) em
+vez de só inspecionar a User Story onde ela já existir — ver aquele
+arquivo para o fluxo completo (happy path → edge cases) antes de
+prosseguir para a Fase 2.
+
 ### Local vs. board (vale para as Fases 2 e 3)
 
 * **Se o projeto NÃO trabalha com um sistema de rastreamento de trabalho
@@ -131,9 +137,10 @@ vira sua própria Epic, com tasks por camada. As camadas exatas
 projeto (`context/architecture.md`); o exemplo acima é ilustrativo, não
 uma lista fechada.
 
-Quando o time trabalha com epics dessa forma, ver "Branch de epic como
-sync" em `18-board-e-branch.md` — as branches de task fazem merge na
-branch da epic, que só depois faz merge em main/prod.
+Quando o time trabalha com epics dessa forma, ver "Branch de sync
+(epic ou US, opcional)" em `18-board-e-branch.md` — as branches de
+task fazem merge na branch da epic, que só depois faz merge em
+main/prod.
 
 ### Fase 4 — Implementação
 

@@ -33,12 +33,14 @@ o conteúdo recomendado de `.ai/specs/features/<slug>/` é:
 
 ```text
 .ai/specs/features/<slug>/
+├── us.md        (opcional — só quando o projeto adota 21-us-e-cards.md)
 ├── spec.md
 └── tasks.md
 ```
 
 usando os templates prontos em `templates/specs/spec.md` e
-`templates/specs/tasks.md`, que já cobrem os elementos listados acima
+`templates/specs/tasks.md`, e, quando aplicável, `templates/specs/us.md`
+(`21-us-e-cards.md`), que já cobrem os elementos listados acima
 (Contexto/Problema/Objetivo/Requisitos/Critérios de aceitação/etc.) em um
 formato mais estruturado (User Stories WHEN/THEN/SHALL, rastreabilidade de
 requisitos). Para specs simples, a estrutura mínima já descrita acima
