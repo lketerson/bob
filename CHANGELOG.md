@@ -5,6 +5,17 @@ Versionamento deste repositório (a especificação-fonte), seguindo
 gerado em cada projeto-alvo, ver `.ai/CHANGELOG.md` daquele projeto e
 `spec/20-versionamento.md`.
 
+## [1.7.0] - 2026-09-28
+
+Adiciona `/bob-update`: sincroniza `.ai/` com a versão atual do
+`bob_framework` diretamente, sem passar pela árvore de decisão de 4
+cenários do `/bob-start` — útil para quem já sabe que está
+desatualizado e não quer repetir nenhuma pergunta de bootstrap já
+respondida. Aciona o mesmo fluxo de sincronização de
+`spec/20-versionamento.md` que o cenário 3 do `/bob-start` já usava
+(nenhum processo novo, só um segundo ponto de entrada), com preview
+próprio em `update.temp.md`.
+
 ## [1.6.0] - 2026-09-28
 
 Adiciona um incremento opcional de SDD: `spec/21-us-e-cards.md`

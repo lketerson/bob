@@ -56,6 +56,7 @@ Crie a seguinte estrutura:
 │   ├── bob-add-mcp.md
 │   ├── bob-create-spec.md
 │   ├── bob-validate.md
+│   ├── bob-update.md
 │   ├── bob-techlead.md
 │   ├── bob-architect.md
 │   ├── bob-developer.md

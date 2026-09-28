@@ -101,7 +101,10 @@ como deste framework (`19-comandos.md`, cenários 2 e 3):
 
 ## Sincronização (`.ai/` desatualizado)
 
-Quando `/bob-start` detecta um carimbo desatualizado:
+Quando `/bob-start` (cenário 3) detecta um carimbo desatualizado, ou o
+dev aciona `/bob-update` diretamente — mesmo fluxo, pulando a árvore de
+decisão de cenários do `/bob-start` para quem já sabe que quer
+sincronizar, sem responder de novo nada do bootstrap já respondido:
 
 1. Ler, no `CHANGELOG.md` do `bob_framework`, as entradas mais recentes
    que o carimbo registrado.
@@ -109,8 +112,9 @@ Quando `/bob-start` detecta um carimbo desatualizado:
    desde aquela versão (ex.: "a versão 1.3.0 adicionou o comando
    `/bob-security` e o arquivo `constitution/quality.md`") e o que
    precisaria ser adicionado/atualizado neste `.ai/` para acompanhar.
-3. Gerar o preview em `start.temp.md` com os arquivos que seriam
-   criados/alterados.
+3. Gerar o preview em `start.temp.md` (quando acionado via
+   `/bob-start`) ou `update.temp.md` (quando acionado via
+   `/bob-update`) com os arquivos que seriam criados/alterados.
 4. Aguardar aprovação explícita — uma mudança MAJOR do `bob_framework`
    NUNCA é aplicada automaticamente, mesmo com aprovação genérica de
    "sincronizar", porque pode implicar decisão que afeta convenções já

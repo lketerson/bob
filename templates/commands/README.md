@@ -48,6 +48,7 @@ de volta para `.ai/`, nunca cópias divergentes.
 | `/bob-add-mcp` | Configura um novo servidor MCP a partir de um link de documentação ou do pacote. |
 | `/bob-create-spec` | Cria uma nova especificação de feature (`.ai/specs/features/<slug>/`). |
 | `/bob-validate` | Roda o checklist de validação de `.ai/` — apenas leitura. |
+| `/bob-update` | Sincroniza `.ai/` com a versão atual do `bob_framework` diretamente, sem passar pelo menu do `/bob-start`. |
 | `/bob-onboarding` (opcional) | Guia um novo desenvolvedor pelo repositório via um roteiro de estudo. |
 | `/bob-onboarding-abandonar` (opcional) | Interrompe e limpa o processo de onboarding a qualquer momento. |
 

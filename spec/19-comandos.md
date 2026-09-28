@@ -28,6 +28,7 @@ Crie:
 ├── bob-add-mcp.md
 ├── bob-create-spec.md
 ├── bob-validate.md
+├── bob-update.md
 ├── bob-techlead.md
 ├── bob-architect.md
 ├── bob-developer.md
@@ -72,7 +73,10 @@ vez, via autocomplete da ferramenta de IA (quando suportado), digitando
    `13-descoberta-e-migracao.md`, ou o fluxo de sincronização de
    `20-versionamento.md`. Em nenhum dos dois casos oferece o fluxo de
    reorganização do cenário 4 — a estrutura já é deste framework, só
-   precisa ser completada/atualizada.
+   precisa ser completada/atualizada. Quando o dev já sabe que está
+   desatualizado e só quer sincronizar, `/bob-update` aciona
+   diretamente o mesmo fluxo de sincronização, sem passar por esta
+   avaliação de cenário.
 4. **`.ai/` existe, mas não foi gerado por este framework** (estrutura
    totalmente diferente da descrita em `02-estrutura-diretorios.md` —
    ex.: outra ferramenta ou processo interno já usa esse caminho) →
@@ -99,6 +103,7 @@ existir — todos os demais comandos pressupõem `.ai/` já criado (por
 | `/bob-add-mcp` | Configuração de um novo servidor MCP a partir de um link informado pelo usuário | Sim, como `add-mcp.temp.md` |
 | `/bob-create-spec` | Criação de uma nova spec de feature em `.ai/specs/features/<slug>/` (`07`, `17`) | Sim, como `create-spec.temp.md` |
 | `/bob-validate` | Checklist de validação de `.ai/` (`14`) | Não — comando somente leitura |
+| `/bob-update` | Sincronização direta de `.ai/` com a versão atual do `bob_framework` (`20`), sem passar pela avaliação de cenário do `/bob-start` | Sim, como `update.temp.md` |
 | `/bob-onboarding` (opcional) | Agente Onboarding — instrutor para novos devs (`05`, `templates/agents/onboarding.md`) | Não — usa seu próprio mecanismo de roadmap/branch |
 | `/bob-onboarding-abandonar` (opcional) | Interrompe e limpa o processo de onboarding a qualquer momento | Não — o próprio comando já é a confirmação |
 
@@ -224,9 +229,12 @@ projeto-alvo, onde `slug` é o nome do comando sem o prefixo `bob-` (ex.:
 acionadas por `/bob-start` (bootstrap, reorganização de `.ai/` não-
 framework, retomada de bootstrap incompleto, sincronização de versão —
 `13-descoberta-e-migracao.md`, `20-versionamento.md`) usam
-`start.temp.md`. Nomear o arquivo pelo comando evita colisão quando mais
-de um comando com preview roda em paralelo sob orquestração multiagente
-(`11-adaptadores.md`, "Suporte a multiagentes").
+`start.temp.md`; a mesma sincronização de versão, quando acionada
+diretamente por `/bob-update` em vez de pelo `/bob-start`, usa
+`update.temp.md` (`20-versionamento.md`). Nomear o arquivo pelo comando
+evita colisão quando mais de um comando com preview roda em paralelo
+sob orquestração multiagente (`11-adaptadores.md`, "Suporte a
+multiagentes").
 
 **Exceção deliberada:** `/bob-map-codebase` e `/bob-concerns` NÃO exigem
 esse preview, mesmo escrevendo diretamente em `.ai/context/*.md` — ambos
