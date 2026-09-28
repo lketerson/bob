@@ -272,7 +272,7 @@ lista exaustiva:
 |---|---|
 | Linguagem/gerenciador de pacotes identificado (ex.: `package.json`, `.csproj`, `requirements.txt`) | MCP específico da linguagem/ecossistema, quando existir |
 | Remote Git aponta para Azure DevOps | MCP do Azure DevOps |
-| Remote Git aponta para GitHub | MCP do GitHub |
+| Remote Git aponta para GitHub | `gh` CLI, se disponível no ambiente; MCP do GitHub como alternativa |
 | `Dockerfile` / `docker-compose.yml` presentes | MCP do Docker |
 | Banco de dados identificado em `integrations.md` | MCP do respectivo banco de dados |
 | Aplicação web (front-end servido em navegador), independentemente de já ter testes E2E configurados | MCP do Playwright |
@@ -283,6 +283,13 @@ cada um oferece, em poucas palavras) e aguardar aprovação explícita antes
 de habilitar qualquer um. NÃO instale ou habilite nenhum MCP não aprovado
 explicitamente pelo usuário. Nem todo item sugerido precisa existir de
 fato (ex.: pode não haver MCP oficial para uma stack específica).
+
+Quando existir um CLI oficial e MCP para a mesma ferramenta (ex.: GitHub:
+`gh` CLI vs. MCP do GitHub), a ordem de preferência sugerida ao usuário é
+**CLI > MCP > outras alternativas** — o CLI tende a ter execução mais
+direta e sem overhead de servidor. Isso é só a sugestão default: se o
+usuário preferir o MCP (ex.: já está configurado, ou prefere a
+integração nativa do agente), a escolha dele prevalece.
 
 ## Passo 6 — Escopo da configuração MCP
 

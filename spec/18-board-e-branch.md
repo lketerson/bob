@@ -28,6 +28,34 @@ dedicada nem Pull Request.
 
 ## Board
 
+### Ferramenta recomendada, na ausência de board
+
+Se o time não possuir nenhuma ferramenta de board (nem GitHub, nem Azure
+DevOps, nem outra) e optar por adotar o padrão do framework (ver
+condição no topo deste arquivo), a recomendação padrão é criar uma
+**GitHub Organization** (plano Free) e usar **GitHub Projects** como
+board:
+
+* O plano Free de uma Organization no GitHub não tem limite de membros
+  nem custo — diferente de alternativas como Linear (free limitado a 10
+  membros) ou Trello (free limitado a 10 colaboradores por workspace).
+* Repositórios privados ilimitados também estão inclusos no Free.
+* Para interagir com o GitHub (abrir/mover card, criar PR, comentar,
+  mudar estado), a ordem de preferência sugerida é **`gh` CLI > MCP do
+  GitHub (`github/github-mcp-server`) > outras alternativas** — ver
+  `16-bootstrap-interativo.md` (Passo 5). Não é exclusão do MCP: se o
+  usuário preferir o MCP, essa escolha prevalece. Nas seções abaixo,
+  onde este arquivo descreve uma ação "via MCP", entenda "via `gh` CLI
+  ou MCP do GitHub, conforme a escolha do usuário" quando a ferramenta
+  escolhida for o GitHub.
+
+Essa é uma recomendação de ponto de partida, não uma obrigação — o
+time continua livre para escolher outra ferramenta, documentando a
+escolha em `.ai/instructions/git.md` conforme já determina
+`13-descoberta-e-migracao.md`.
+
+### Estados do card
+
 Estados do card, em ordem:
 
 ```text
