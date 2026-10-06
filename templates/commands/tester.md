@@ -1,3 +1,7 @@
+---
+description: Define a estratégia e os casos de teste de uma área.
+---
+
 # /bob-tester
 
 ## Descrição

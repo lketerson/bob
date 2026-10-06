@@ -70,6 +70,7 @@ Depois de criar a estrutura, valide que:
 * Nenhum arquivo canônico referencia uma stack específica desnecessariamente.
 * Não existem suposições específicas de provedor em `.ai/`.
 * Os adaptadores de provedor são mínimos.
+* Existem adaptadores apenas para as ferramentas de IA escolhidas no bootstrap (registradas em `context/integrations.md`), além do `AGENTS.md`.
 * Os adaptadores de comando (quando a ferramenta suporta) apontam para `.ai/commands/`, sem duplicar conteúdo.
 * Não há duplicação significativa.
 * As instruções de projeto existentes foram preservadas.

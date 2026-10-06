@@ -2,7 +2,41 @@
 
 ## Estratégia de Adaptadores
 
-Crie adaptadores de provedor mínimos.
+Crie adaptadores de provedor mínimos — apenas para as ferramentas de IA
+escolhidas pelo usuário no bootstrap (ver "Seleção de ferramentas",
+abaixo).
+
+### Seleção de ferramentas
+
+As ferramentas que recebem adaptadores são escolhidas pelo usuário no
+bootstrap (`16-bootstrap-interativo.md`, Passo 0), nunca assumidas pelo
+agente. `AGENTS.md` é sempre criado, independentemente da escolha — é o
+ponto de entrada genérico, já lido nativamente por várias ferramentas.
+Cada ferramenta escolhida recebe, além dele, os adaptadores que ela
+suportar:
+
+| Ferramenta | Instruções | Comandos (`19-comandos.md`) | Outros |
+|---|---|---|---|
+| Claude Code | `CLAUDE.md` | `.claude/commands/bob-*.md` | Subagentes em `.claude/agents/` |
+| Codex | `AGENTS.md` (nativo) | Prompts customizados (tipicamente ao nível de usuário — confirmar escopo com o usuário) | — |
+| Cursor | `AGENTS.md` (nativo) ou `.cursor/rules/` | `.cursor/commands/bob-*.md` | — |
+| GitHub Copilot | `.github/copilot-instructions.md` | Prompt files em `.github/prompts/bob-*.prompt.md` | `.github/instructions/` (ver abaixo) |
+| Gemini CLI | `GEMINI.md` | `.gemini/commands/bob-*.toml` | — |
+| Windsurf | `AGENTS.md` (nativo) ou `.windsurf/rules/` | Workflows em `.windsurf/workflows/` | — |
+
+Esta tabela é referência, não prescrição — formatos e caminhos dessas
+ferramentas mudam com frequência. O agente DEVE confirmar o
+comportamento real de cada ferramenta escolhida antes de gravar, e, para
+uma ferramenta fora da tabela, perguntar ao usuário onde ela lê
+instruções e comandos. Quando a ferramenta lê `AGENTS.md` nativamente,
+não criar um arquivo de instruções próprio só para repetir o mesmo
+apontamento.
+
+Uma ferramenta não escolhida não recebe adaptador nenhum. Para adicionar
+uma ferramenta depois do bootstrap, o dev pede ao agente (ex.: pelo menu
+do `/bob-start`, `19-comandos.md`, cenário 2), que gera os adaptadores
+daquela ferramenta com o mesmo preview obrigatório e atualiza
+`.ai/context/integrations.md`.
 
 ### AGENTS.md
 
@@ -19,13 +53,14 @@ NÃO DEVE duplicar todo o diretório `.ai/`.
 
 ### CLAUDE.md
 
-Crie um adaptador mínimo que direcione o Claude para `.ai/`.
+Só quando Claude Code foi escolhido. Crie um adaptador mínimo que
+direcione o Claude para `.ai/`.
 
 Não duplique as regras do projeto.
 
 ### GitHub Copilot
 
-Crie:
+Só quando GitHub Copilot foi escolhido. Crie:
 
 ```text
 .github/copilot-instructions.md
@@ -43,11 +78,20 @@ No entanto, crie-as apenas quando fornecerem valor significativo.
 
 ### Comandos
 
-Ferramentas de IA que suportam comandos nativos (slash commands, ex.:
-Claude Code) DEVEM receber um adaptador mínimo por comando de
+Ferramentas de IA escolhidas no bootstrap que suportam comandos nativos
+(slash commands, ex.: Claude Code) DEVEM receber um adaptador mínimo por comando de
 `.ai/commands/`, no formato específico daquela ferramenta (ex.:
 `.claude/commands/bob-start.md`), apontando de volta para o arquivo
 canônico correspondente — nunca duplicando o conteúdo do comando.
+
+Todo adaptador de comando DEVE levar a descrição do comando — o
+`description` do frontmatter do arquivo canônico (`19-comandos.md`,
+"Estrutura de um arquivo de comando") — no campo nativo da ferramenta,
+para que ela apareça no autocomplete ao digitar `/bob-` (ex.:
+`description` no frontmatter em Claude Code e nos prompt files do
+Copilot; `description` no TOML do Gemini CLI). Em ferramentas sem campo
+próprio, a descrição vai na primeira linha do adaptador. O texto é
+copiado sem alteração, para não divergir do canônico.
 
 Ferramentas sem suporte nativo a comandos não recebem esses adaptadores;
 o dev referencia o arquivo canônico de `.ai/commands/` diretamente na

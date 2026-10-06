@@ -1,3 +1,7 @@
+---
+description: Gera a spec técnica a partir da User Story aprovada.
+---
+
 # /bob-us-plan
 
 ## Descrição

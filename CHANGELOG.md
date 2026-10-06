@@ -5,6 +5,37 @@ Versionamento deste repositório (a especificação-fonte), seguindo
 gerado em cada projeto-alvo, ver `.ai/CHANGELOG.md` daquele projeto e
 `spec/20-versionamento.md`.
 
+## [1.9.0] - 2026-10-06
+
+O bootstrap do `/bob-start` passa a perguntar, logo no Passo 0 junto
+com o idioma, para quais ferramentas de IA configurar o ambiente
+(Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, Windsurf ou
+outra), em seleção múltipla e pré-marcando a ferramenta em uso e as já
+detectadas na descoberta. Até aqui os adaptadores eram criados "quando
+apropriado", sem perguntar; agora `AGENTS.md` continua sempre criado
+como ponto de entrada genérico, e os demais adaptadores (instruções,
+comandos, agentes, regras) só são gerados para as ferramentas
+escolhidas. `spec/11-adaptadores.md` ganha uma tabela de referência
+com o formato de cada ferramenta, e MCP e barra de status passam a ser
+configurados apenas para as ferramentas escolhidas que os suportam.
+
+Cada comando também ganha uma descrição curta, em linguagem simples, no
+frontmatter (`description:`) de `templates/commands/<nome>.md` — ex.:
+`/bob-update` "Atualiza o BoB e aplica as novas regras neste
+repositório." Os adaptadores de comando levam esse texto para o campo
+nativo de cada ferramenta, para aparecer no autocomplete ao digitar
+`/bob-`, e as tabelas de `templates/commands/README.md` passam a usar
+exatamente a mesma descrição.
+
+`/bob-update` e `/bob-start` passam a obter a versão mais recente do
+`bob_framework` antes de comparar o carimbo de versão
+(`spec/20-versionamento.md`): `git pull --ff-only` no clone local do BoB
+quando ele está limpo e no branch principal, ou leitura da última
+release no GitHub quando não há clone. Antes, a comparação era feita
+contra a cópia que o agente tivesse em mãos, e uma cópia antiga fazia
+um `.ai/` desatualizado parecer em dia. O pull nunca acontece no
+repositório de destino.
+
 ## [1.8.1] - 2026-10-06
 
 Corrige o lint de Markdown do CI, quebrado desde a v1.6.0: os três

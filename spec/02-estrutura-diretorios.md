@@ -101,7 +101,10 @@ A lista de arquivos em `commands/` acima é ilustrativa desta árvore —
 (nome, descrição, condição de existência). Qualquer comando adicionado,
 removido ou renomeado lá DEVE ser replicado aqui na mesma edição.
 
-Crie também os adaptadores de provedor/ferramenta quando apropriado:
+Crie também os adaptadores de provedor/ferramenta — `AGENTS.md` sempre, e
+os demais apenas para as ferramentas de IA escolhidas pelo usuário no
+bootstrap (`16-bootstrap-interativo.md`, Passo 0; `11-adaptadores.md`,
+"Seleção de ferramentas"). Exemplo com Claude Code e Copilot escolhidos:
 
 ```text
 AGENTS.md

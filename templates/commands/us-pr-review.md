@@ -1,3 +1,7 @@
+---
+description: Faz uma revisão consultiva de um PR.
+---
+
 # /bob-us-pr-review
 
 ## Descrição

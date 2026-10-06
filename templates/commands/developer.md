@@ -1,3 +1,7 @@
+---
+description: Implementa uma tarefa pontual, sem orquestração.
+---
+
 # /bob-developer
 
 ## Descrição

@@ -1,3 +1,7 @@
+---
+description: Instala uma skill pronta de um marketplace.
+---
+
 # /bob-add-skill
 
 ## Descrição

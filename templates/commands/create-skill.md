@@ -1,3 +1,7 @@
+---
+description: Cria uma skill nova, do zero, com conhecimento especializado do projeto.
+---
+
 # /bob-create-skill
 
 ## Descrição

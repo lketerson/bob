@@ -1,3 +1,7 @@
+---
+description: Guia um novo dev pelo repositório com um roteiro de estudo.
+---
+
 # /bob-onboarding
 
 ## Descrição

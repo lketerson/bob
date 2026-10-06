@@ -1,3 +1,7 @@
+---
+description: Completa a User Story com os edge cases, via perguntas.
+---
+
 # /bob-us-edge-cases
 
 ## Descrição

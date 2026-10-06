@@ -1,3 +1,7 @@
+---
+description: Quebra a spec em cards de tarefa.
+---
+
 # /bob-us-to-task
 
 ## Descrição

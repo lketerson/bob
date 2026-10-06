@@ -23,6 +23,9 @@ Detectar stack, ferramentas e integrações existentes
         ↓
 Perguntar ao usuário: idioma da documentação gerada e da comunicação
         ↓
+Perguntar ao usuário: para quais ferramentas de IA configurar o ambiente
+(Claude Code, Codex, Cursor, Copilot, etc.)
+        ↓
 Perguntar ao usuário: já existe board? deseja criar um (manual ou via MCP)?
         ↓
 Perguntar ao usuário: pontos inaceitáveis para este projeto (guardrails)
@@ -46,7 +49,9 @@ Gerar preview em start.temp.md e aguardar aprovação
 Criar os arquivos definitivos em .ai/ e nos adaptadores
 ```
 
-## Passo 0 — Idioma
+## Passo 0 — Idioma e ferramentas de IA
+
+### Idioma
 
 Perguntar ao usuário em qual idioma a comunicação do agente e toda a
 documentação gerada em `.ai/` (constituição, instruções, agentes, skills,
@@ -61,6 +66,37 @@ sigam sem precisar perguntar de novo.
 
 Isto é distinto do idioma do próprio `bob_framework/` (a especificação em
 si), que permanece sempre em PT-BR — ver `01-fundamentos.md`.
+
+### Ferramentas de IA
+
+Perguntar ao usuário **para quais ferramentas de IA o ambiente deve ser
+configurado** — seleção múltipla, já que é comum um time usar mais de
+uma. Opções ilustrativas, não uma lista fechada: Claude Code, Codex,
+Cursor, GitHub Copilot, Gemini CLI, Windsurf, ou outra informada pelo
+usuário.
+
+Pré-marcar como sugestão, sem assumir:
+
+* a ferramenta que está executando o bootstrap agora;
+* as ferramentas com configuração já encontrada na descoberta
+  (`13-descoberta-e-migracao.md` — ex.: `CLAUDE.md`, `.cursor/`,
+  `.github/copilot-instructions.md`, `.codex/`, `GEMINI.md`).
+
+A resposta define quais adaptadores são gerados
+(`11-adaptadores.md`, "Seleção de ferramentas"): `AGENTS.md` é sempre
+criado, como ponto de entrada genérico; os demais adaptadores
+(instruções, comandos, agentes, regras) só são criados para as
+ferramentas escolhidas. Ela também delimita os Passos 6 e 7 — escopo de
+MCP e barra de status são perguntados apenas para as ferramentas
+escolhidas que suportam cada recurso.
+
+Para uma ferramenta informada pelo usuário que o agente não conhece,
+perguntar onde ela lê instruções e comandos antes de gerar qualquer
+adaptador — nunca inventar caminho ou formato.
+
+Registrar a escolha em `.ai/context/integrations.md`, seção
+"Ferramentas de IA", para que sessões futuras saibam quais adaptadores
+manter sincronizados.
 
 ## Passo 1 — Board e Gitflow
 
@@ -303,7 +339,9 @@ Perguntar ao usuário se a configuração MCP aprovada deve ser:
 * **Global** — vale para todos os projetos do usuário na máquina/ferramenta
   (configuração fora do projeto-alvo, ao nível de usuário).
 
-O local exato de cada escopo depende da ferramenta de IA em uso e NÃO DEVE
+Quando mais de uma ferramenta foi escolhida no Passo 0, configurar o MCP
+em cada uma delas que o suporte, no formato próprio de cada uma. O local
+exato de cada escopo depende da ferramenta de IA e NÃO DEVE
 ser assumido — se não for evidente, perguntar ao usuário onde a ferramenta
 espera esse arquivo antes de gravar.
 
@@ -336,9 +374,10 @@ dados via um payload JSON (modelo, janela de contexto, rate limits,
 diretório atual) enviado por stdin a um comando configurável em
 `.claude/settings.json` (`statusLine.command`).
 
-O agente DEVE primeiro confirmar se a ferramenta de IA em uso suporta
-esse tipo de configuração — NÃO assuma. Se não suportar, ou não for
-possível confirmar, pule este passo sem perguntar nada ao usuário.
+O agente DEVE primeiro confirmar se alguma das ferramentas de IA
+escolhidas no Passo 0 suporta esse tipo de configuração — NÃO assuma.
+Se nenhuma suportar, ou não for possível confirmar, pule este passo sem
+perguntar nada ao usuário.
 
 Quando suportado, perguntar: **"Deseja configurar uma barra de status
 personalizada, mostrando modelo em uso e consumo da janela de contexto

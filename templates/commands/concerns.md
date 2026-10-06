@@ -1,3 +1,7 @@
+---
+description: Audita o código em busca de violações de SOLID, duplicação e problemas de nomenclatura.
+---
+
 # /bob-concerns
 
 ## Descrição

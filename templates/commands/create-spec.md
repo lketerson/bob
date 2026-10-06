@@ -1,3 +1,7 @@
+---
+description: Cria a especificação de uma nova feature (spec e tasks).
+---
+
 # /bob-create-spec
 
 ## Descrição

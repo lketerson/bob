@@ -1,3 +1,7 @@
+---
+description: Registra uma decisão técnica como ADR, a partir de uma instrução ou de perguntas.
+---
+
 # /bob-adr
 
 ## Descrição

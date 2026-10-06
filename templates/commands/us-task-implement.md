@@ -1,3 +1,7 @@
+---
+description: Implementa uma task/card.
+---
+
 # /bob-us-task-implement
 
 ## Descrição

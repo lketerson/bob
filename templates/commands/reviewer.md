@@ -1,3 +1,7 @@
+---
+description: Revisa uma mudança já implementada.
+---
+
 # /bob-reviewer
 
 ## Descrição

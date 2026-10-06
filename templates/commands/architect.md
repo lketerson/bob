@@ -1,3 +1,7 @@
+---
+description: Planeja a implementação e compara alternativas técnicas.
+---
+
 # /bob-architect
 
 ## Descrição

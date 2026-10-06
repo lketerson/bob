@@ -1,3 +1,7 @@
+---
+description: Mapeia o repositório e atualiza o contexto do projeto em .ai/context/.
+---
+
 # /bob-map-codebase
 
 ## Descrição

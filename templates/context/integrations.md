@@ -47,6 +47,10 @@ real vive fora de `.ai/`, no arquivo específico da ferramenta
 (11-adaptadores.md). Preencher apenas o que o dev de fato aprovou.
 -->
 
+### Ferramentas configuradas
+
+<!-- Ferramentas de IA escolhidas no bootstrap (Passo 0) e os adaptadores gerados para cada uma (ex.: Claude Code → `CLAUDE.md`, `.claude/commands/`; Cursor → `.cursor/commands/`). `AGENTS.md` existe sempre. -->
+
 ### Board / rastreamento de trabalho
 
 <!-- Ferramenta usada (ex.: Azure Boards, Jira, GitHub Projects, Trello), e se foi criada manualmente ou via MCP. -->

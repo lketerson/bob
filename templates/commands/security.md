@@ -1,3 +1,7 @@
+---
+description: Analisa a segurança de uma mudança ou área (segredos, injeção, spoofing).
+---
+
 # /bob-security
 
 ## Descrição

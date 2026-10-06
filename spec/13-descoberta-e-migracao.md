@@ -12,7 +12,7 @@ Antes de criar ou modificar o framework:
 6. Identificar diretrizes de contribuição existentes.
 7. Identificar convenções de teste existentes.
 8. Identificar convenções de Git existentes.
-9. Identificar instruções de agente existentes.
+9. Identificar instruções de agente existentes — e, a partir delas, quais ferramentas de IA o time já usa (ex.: `CLAUDE.md`, `.cursor/`, `.github/copilot-instructions.md`, `.codex/`, `GEMINI.md`), para pré-marcar a seleção de ferramentas do bootstrap (`16-bootstrap-interativo.md`, Passo 0).
 
 NÃO sobrescreva configuração de IA existente às cegas.
 

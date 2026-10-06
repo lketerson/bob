@@ -101,12 +101,39 @@ como deste framework (`19-comandos.md`, cenários 2 e 3):
   interrompido**, ver `13-descoberta-e-migracao.md` — não é um problema
   de versão, é um bootstrap que nunca terminou.
 
+## Obter a versão mais recente do `bob_framework`
+
+"Versão atual do `bob_framework`" é a versão mais recente publicada, não
+a da cópia que o agente tem em mãos — uma cópia local antiga faria o
+carimbo parecer atualizado quando não está. Por isso, antes de comparar
+o carimbo, tanto `/bob-start` (cenários 2 e 3, `19-comandos.md`) quanto
+`/bob-update` DEVEM obter a versão mais recente:
+
+1. **Cópia local é um clone Git** → `git fetch` nesse clone. Se estiver
+   atrás do branch principal remoto, com a árvore de trabalho limpa e no
+   próprio branch principal, atualizar com `git pull --ff-only`. Se
+   houver mudanças locais, outro branch em uso ou histórico divergente,
+   NÃO mexer no clone: informar o dev e perguntar se segue com a versão
+   local.
+2. **Não há clone local** (arquivos copiados, ou o agente leu o
+   framework por link) → ler o `CHANGELOG.md` e os templates necessários
+   direto da última release do repositório de origem
+   (`https://github.com/lketerson/bob`), só para leitura — nunca gravar
+   uma cópia do framework no repositório de destino.
+3. **Sem acesso** (sem rede, sem permissão, falha no pull) → informar o
+   dev e perguntar se segue com a versão local. Se seguir, deixar claro
+   no resumo da sincronização contra qual versão a comparação foi feita.
+
+O pull acontece apenas no clone do `bob_framework` — NUNCA no
+repositório de destino, cujo Git não é tocado por esta etapa.
+
 ## Sincronização (`.ai/` desatualizado)
 
 Quando `/bob-start` (cenário 3) detecta um carimbo desatualizado, ou o
 dev aciona `/bob-update` diretamente — mesmo fluxo, pulando a árvore de
 decisão de cenários do `/bob-start` para quem já sabe que quer
-sincronizar, sem responder de novo nada do bootstrap já respondido:
+sincronizar, sem responder de novo nada do bootstrap já respondido —,
+sempre depois de obter a versão mais recente (seção anterior):
 
 1. Ler, no `CHANGELOG.md` do `bob_framework`, as entradas mais recentes
    que o carimbo registrado.
@@ -115,7 +142,12 @@ sincronizar, sem responder de novo nada do bootstrap já respondido:
    `/bob-security` e o arquivo `constitution/quality.md`") e o que
    precisaria ser adicionado/atualizado neste `.ai/` para acompanhar.
    Ao sincronizar a partir de uma versão anterior à introdução de ADRs,
-   oferecer também a extração inicial de decisões (`22-adr.md`).
+   oferecer também a extração inicial de decisões (`22-adr.md`). Ao
+   sincronizar a partir de uma versão anterior à seleção de ferramentas
+   de IA, perguntar quais ferramentas o time usa
+   (`16-bootstrap-interativo.md`, Passo 0) e registrar a resposta em
+   `context/integrations.md`, sem remover adaptadores já existentes sem
+   confirmação.
 3. Gerar o preview em `start.temp.md` (quando acionado via
    `/bob-start`) ou `update.temp.md` (quando acionado via
    `/bob-update`) com os arquivos que seriam criados/alterados.

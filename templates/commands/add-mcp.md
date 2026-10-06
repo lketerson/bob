@@ -1,3 +1,7 @@
+---
+description: Configura um novo servidor MCP a partir de um link.
+---
+
 # /bob-add-mcp
 
 ## Descrição

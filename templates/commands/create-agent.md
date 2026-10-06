@@ -1,3 +1,7 @@
+---
+description: Cria um novo papel de agente para o projeto.
+---
+
 # /bob-create-agent
 
 ## Descrição

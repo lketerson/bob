@@ -1,3 +1,7 @@
+---
+description: Aplica os ajustes pedidos na revisão de um PR.
+---
+
 # /bob-us-pr-adjust
 
 ## Descrição

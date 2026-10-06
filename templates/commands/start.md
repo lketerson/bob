@@ -1,3 +1,7 @@
+---
+description: Inicia o BoB: configura o .ai/ na primeira vez, ou mostra o estado atual e os comandos disponíveis.
+---
+
 # /bob-start
 
 ## Descrição
@@ -46,13 +50,18 @@ Nenhuma — é o único comando do framework que pode ser executado antes de
    incluindo o preview obrigatório em `start.temp.md` (Passo 8) antes de
    gravar qualquer arquivo definitivo — incluindo `.ai/CHANGELOG.md`
    (entrada inicial) e o carimbo de versão em `.ai/README.md`
-   (`spec/20-versionamento.md`). Antes do preview, listar as decisões
+   (`spec/20-versionamento.md`). Logo no início, junto com o idioma,
+   perguntar para quais ferramentas de IA configurar o ambiente (Claude
+   Code, Codex, Cursor, Copilot, etc.) — só elas recebem adaptadores,
+   além do `AGENTS.md` (`spec/11-adaptadores.md`). Antes do preview, listar as decisões
    técnicas identificadas no código existente e no próprio bootstrap e
    perguntar quais registrar como ADR; as escolhidas entram no mesmo
    preview (`spec/22-adr.md`, "Extração inicial no `/bob-start`").
-3. Se existir, comparar sua estrutura com
+3. Se existir, obter antes a versão mais recente do `bob_framework`
+   (`spec/20-versionamento.md`, "Obter a versão mais recente do
+   `bob_framework`") e então comparar sua estrutura com
    `spec/02-estrutura-diretorios.md` e o carimbo de versão em
-   `.ai/README.md` com a versão atual do `bob_framework`:
+   `.ai/README.md` com essa versão:
    * Se corresponder e o carimbo bater, ler `.ai/README.md` e
      `.ai/commands/README.md`, apresentar um resumo do estado atual e a
      lista de comandos disponíveis, e perguntar ao dev o que deseja

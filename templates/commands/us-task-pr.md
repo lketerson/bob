@@ -1,3 +1,7 @@
+---
+description: Abre o PR de uma task/card para a branch da User Story.
+---
+
 # /bob-us-task-pr
 
 ## Descrição

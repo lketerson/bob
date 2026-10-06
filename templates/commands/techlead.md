@@ -1,3 +1,7 @@
+---
+description: Recebe uma demanda, divide por área e aciona os agentes certos, terminando com revisão.
+---
+
 # /bob-techlead
 
 ## Descrição

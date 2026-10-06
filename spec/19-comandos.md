@@ -54,7 +54,10 @@ vez, via autocomplete da ferramenta de IA (quando suportado), digitando
 
 ## `/bob-start` — comportamento condicional
 
-`/bob-start` avalia quatro cenários, nesta ordem:
+`/bob-start` avalia quatro cenários, nesta ordem — quando `.ai/` já
+existe, sempre depois de obter a versão mais recente do `bob_framework`
+(`20-versionamento.md`), para que a comparação de carimbo não seja feita
+contra uma cópia local antiga:
 
 1. **`.ai/` não existe** → dispara a descoberta do repositório
    (`13-descoberta-e-migracao.md`) seguida do bootstrap interativo
@@ -120,7 +123,8 @@ A tabela acima, a de "Comandos de agente" e a de "Comandos de US/Cards"
 (abaixo) são a fonte canônica da lista de comandos do framework. `templates/commands/README.md` e a
 árvore de `commands/` em `02-estrutura-diretorios.md` DEVEM espelhar
 exatamente os mesmos comandos (nome e, no caso do primeiro, descrição de
-uma linha) — qualquer comando adicionado, removido ou renomeado aqui DEVE
+uma linha — idêntica ao `description` do frontmatter de cada
+`templates/commands/<nome>.md`) — qualquer comando adicionado, removido ou renomeado aqui DEVE
 ser replicado nos dois na mesma edição. Esta é uma disciplina de
 manutenção deste repositório (`bob_framework`), não uma checagem possível
 em tempo de bootstrap: uma vez copiado para `.ai/commands/README.md` de
@@ -170,6 +174,10 @@ condição de existência opcional já usada para `/bob-onboarding`.
 Todo `.ai/commands/bob-<nome>.md` DEVE conter:
 
 ```markdown
+---
+description: <uma frase curta, em linguagem simples, do que o comando faz>
+---
+
 # /bob-<nome>
 
 ## Descrição
@@ -179,6 +187,13 @@ Todo `.ai/commands/bob-<nome>.md` DEVE conter:
 ## Processo
 ## Saída esperada
 ```
+
+O `description` do frontmatter é o que o dev vê ao digitar `/bob-` no
+autocomplete da ferramenta de IA (`11-adaptadores.md`, "Comandos"): uma
+frase só, começando por um verbo, dizendo o que o comando faz do ponto
+de vista do dev — não qual spec ele aciona. Ex.: `/bob-update` →
+"Atualiza o BoB e aplica as novas regras neste repositório." É o mesmo
+texto da coluna de descrição em `.ai/commands/README.md`.
 
 ## `/bob-add-mcp` — detalhe do fluxo
 

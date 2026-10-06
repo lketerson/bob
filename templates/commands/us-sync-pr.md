@@ -1,3 +1,7 @@
+---
+description: Abre o PR que junta várias entregas da User Story.
+---
+
 # /bob-us-sync-pr
 
 ## Descrição

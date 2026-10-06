@@ -1,3 +1,7 @@
+---
+description: Verifica se o .ai/ está completo e consistente, sem alterar nada.
+---
+
 # /bob-validate
 
 ## Descrição

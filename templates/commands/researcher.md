@@ -1,3 +1,7 @@
+---
+description: Pesquisa e compara opções técnicas.
+---
+
 # /bob-researcher
 
 ## Descrição

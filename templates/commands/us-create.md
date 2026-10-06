@@ -1,3 +1,7 @@
+---
+description: Cria a User Story (us.md) com o happy path.
+---
+
 # /bob-us-create
 
 ## Descrição

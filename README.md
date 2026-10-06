@@ -42,7 +42,7 @@ Detalhes de cada camada em [`spec/`](spec/).
 
 1. Aponte seu agente de IA para este repositório e peça para seguir [`start.md`](start.md).
 2. Rode `/bob-start`. Como não há `.ai/` nem histórico de Git prévio, o bootstrap interativo pode adotar a convenção padrão do framework diretamente, sem precisar perguntar sobre convenções já existentes.
-3. Responda as perguntas do bootstrap (idioma, board, agentes, skills, MCPs, barra de status) e aprove o preview em `start.temp.md` antes da gravação definitiva.
+3. Responda as perguntas do bootstrap (idioma, ferramentas de IA a configurar — Claude Code, Codex, Cursor, Copilot etc. —, board, agentes, skills, MCPs, barra de status) e aprove o preview em `start.temp.md` antes da gravação definitiva.
 4. `.ai/` é criado do zero, já estruturado para o projeto.
 
 ### Codebase existente
@@ -57,24 +57,25 @@ Detalhes de cada camada em [`spec/`](spec/).
 
 | Comando | Aciona |
 |---|---|
-| `/bob-start` | Entrypoint — bootstrap completo, orientação, retomada ou sincronização de versão |
-| `/bob-map-codebase` | Mapeia/atualiza `.ai/context/` com evidência do repositório |
-| `/bob-concerns` | Auditoria retrospectiva de SOLID, duplicação e nomenclatura |
-| `/bob-create-agent` | Cria um novo papel de agente |
-| `/bob-create-skill` | Cria uma skill técnica nova |
-| `/bob-add-skill` | Instala uma skill já existente de um marketplace |
-| `/bob-add-mcp` | Configura um novo servidor MCP |
-| `/bob-create-spec` | Cria uma nova spec de feature |
-| `/bob-validate` | Checklist de validação de `.ai/` (leitura) |
-| `/bob-adr` | Registra uma decisão técnica como ADR, por instrução ou perguntas |
-| `/bob-techlead` | Orquestrador — decompõe a demanda e delega aos agentes |
-| `/bob-architect` | Plano de implementação / avaliação de alternativas |
-| `/bob-developer` | Implementação de uma tarefa pontual |
-| `/bob-reviewer` | Revisão de uma mudança já implementada |
-| `/bob-tester` | Estratégia e casos de teste |
-| `/bob-researcher` | Investigação e comparação técnica |
-| `/bob-security` | Análise de segurança focada |
-| `/bob-onboarding` (opcional) | Guia um novo dev pelo repositório via roteiro de estudo |
+| `/bob-start` | Inicia o BoB: configura o .ai/ na primeira vez, ou mostra o estado atual e os comandos disponíveis. |
+| `/bob-map-codebase` | Mapeia o repositório e atualiza o contexto do projeto em .ai/context/. |
+| `/bob-concerns` | Audita o código em busca de violações de SOLID, duplicação e problemas de nomenclatura. |
+| `/bob-create-agent` | Cria um novo papel de agente para o projeto. |
+| `/bob-create-skill` | Cria uma skill nova, do zero, com conhecimento especializado do projeto. |
+| `/bob-add-skill` | Instala uma skill pronta de um marketplace. |
+| `/bob-add-mcp` | Configura um novo servidor MCP a partir de um link. |
+| `/bob-create-spec` | Cria a especificação de uma nova feature (spec e tasks). |
+| `/bob-validate` | Verifica se o .ai/ está completo e consistente, sem alterar nada. |
+| `/bob-update` | Atualiza o BoB e aplica as novas regras neste repositório. |
+| `/bob-adr` | Registra uma decisão técnica como ADR, a partir de uma instrução ou de perguntas. |
+| `/bob-techlead` | Recebe uma demanda, divide por área e aciona os agentes certos, terminando com revisão. |
+| `/bob-architect` | Planeja a implementação e compara alternativas técnicas. |
+| `/bob-developer` | Implementa uma tarefa pontual, sem orquestração. |
+| `/bob-reviewer` | Revisa uma mudança já implementada. |
+| `/bob-tester` | Define a estratégia e os casos de teste de uma área. |
+| `/bob-researcher` | Pesquisa e compara opções técnicas. |
+| `/bob-security` | Analisa a segurança de uma mudança ou área (segredos, injeção, spoofing). |
+| `/bob-onboarding` (opcional) | Guia um novo dev pelo repositório com um roteiro de estudo. |
 
 Lista completa, com sintaxe e pré-condições de cada comando, em [`templates/commands/README.md`](templates/commands/README.md).
 
