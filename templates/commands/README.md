@@ -49,6 +49,7 @@ de volta para `.ai/`, nunca cópias divergentes.
 | `/bob-create-spec` | Cria uma nova especificação de feature (`.ai/specs/features/<slug>/`). |
 | `/bob-validate` | Roda o checklist de validação de `.ai/` — apenas leitura. |
 | `/bob-update` | Sincroniza `.ai/` com a versão atual do `bob_framework` diretamente, sem passar pelo menu do `/bob-start`. |
+| `/bob-adr` | Registra uma decisão técnica como ADR (`.ai/specs/decisions/`), a partir de uma instrução ou de perguntas. |
 | `/bob-onboarding` (opcional) | Guia um novo desenvolvedor pelo repositório via um roteiro de estudo. |
 | `/bob-onboarding-abandonar` (opcional) | Interrompe e limpa o processo de onboarding a qualquer momento. |
 

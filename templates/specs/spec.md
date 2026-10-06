@@ -15,7 +15,7 @@ Resumo compacto para quem for consumir este documento na fase seguinte
 * **Problema em uma frase:**
 * **Escopo aprovado:**
 * **Arquivos relevantes:**
-* **Decisões já tomadas:**
+* **Decisões já tomadas:** <!-- referenciar ADRs pelo número, ex.: ADR-0003 -->
 * **Bloqueios/pendências:**
 
 ## Escopo

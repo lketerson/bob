@@ -29,6 +29,7 @@ Crie:
 ├── bob-create-spec.md
 ├── bob-validate.md
 ├── bob-update.md
+├── bob-adr.md
 ├── bob-techlead.md
 ├── bob-architect.md
 ├── bob-developer.md
@@ -94,7 +95,7 @@ existir — todos os demais comandos pressupõem `.ai/` já criado (por
 
 | Comando | Aciona | Preview obrigatório (`[slug].temp.md`)? |
 |---|---|---|
-| `/bob-start` | Bootstrap completo (`16`) na primeira vez; menu de orientação, confirmação de reorganização, retomada de bootstrap incompleto, ou sincronização de versão, nas seguintes (`13`, `20`) | Sim, como `start.temp.md` — no bootstrap (`16`, Passo 8), na reorganização de um `.ai/` não-framework, na retomada de bootstrap incompleto (`13`), e na sincronização de versão (`20`) |
+| `/bob-start` | Bootstrap completo (`16`) na primeira vez, incluindo a extração inicial de decisões como ADR (`22`); menu de orientação, confirmação de reorganização, retomada de bootstrap incompleto, ou sincronização de versão, nas seguintes (`13`, `20`) | Sim, como `start.temp.md` — no bootstrap (`16`, Passo 8), na reorganização de um `.ai/` não-framework, na retomada de bootstrap incompleto (`13`), e na sincronização de versão (`20`) |
 | `/bob-map-codebase` | Agente Mapper + workflow de mapeamento (`10`) | Não — ver exceção abaixo |
 | `/bob-concerns` | Agente Mapper + workflow de concerns — auditoria retrospectiva que PODE identificar violações de camada/SOLID, duplicação e nomenclatura já existentes (a aplicação proativa de SOLID/DIP/SRP durante o design e a implementação é responsabilidade contínua de Architect/Developer/Techlead — ver `05-agentes.md` — não deste comando) | Não — ver exceção abaixo |
 | `/bob-create-agent` | Criação de um novo papel de agente em `.ai/agents/` (`05`) | Sim, como `create-agent.temp.md` |
@@ -104,6 +105,7 @@ existir — todos os demais comandos pressupõem `.ai/` já criado (por
 | `/bob-create-spec` | Criação de uma nova spec de feature em `.ai/specs/features/<slug>/` (`07`, `17`) | Sim, como `create-spec.temp.md` |
 | `/bob-validate` | Checklist de validação de `.ai/` (`14`) | Não — comando somente leitura |
 | `/bob-update` | Sincronização direta de `.ai/` com a versão atual do `bob_framework` (`20`), sem passar pela avaliação de cenário do `/bob-start` | Sim, como `update.temp.md` |
+| `/bob-adr` | Registro de uma decisão técnica como ADR em `.ai/specs/decisions/`, a partir de uma instrução ou de perguntas ao dev, inclusive substituindo um ADR anterior (`22`) | Sim, como `adr.temp.md` |
 | `/bob-onboarding` (opcional) | Agente Onboarding — instrutor para novos devs (`05`, `templates/agents/onboarding.md`) | Não — usa seu próprio mecanismo de roadmap/branch |
 | `/bob-onboarding-abandonar` (opcional) | Interrompe e limpa o processo de onboarding a qualquer momento | Não — o próprio comando já é a confirmação |
 

@@ -81,7 +81,9 @@ Gates:
   tecnologia, modelagem de dados ou estratégia de rollout — apresenta
   opções com trade-offs para o time decidir. Isso reforça o que já está em
   `03-constituicao.md`/`05-agentes.md` (papel Architect), tornando-o uma
-  etapa formal e obrigatória deste workflow.
+  etapa formal e obrigatória deste workflow. Depois que o time decide, o
+  agente sugere registrar a decisão como ADR (`22-adr.md`), e o Handoff
+  da spec passa a referenciá-lo.
 
 ### Fase 3 — Tasks
 
@@ -168,8 +170,9 @@ não tiver convenção própria de PR/branch já estabelecida.
 
 * A IA NUNCA decide tecnicamente sozinha — só apresenta opções; a decisão
   final é do time. Vale para todas as fases.
-* Cada fase produz um artefato rastreável (`spec.md`, `tasks.md`) — nunca
-  decisões que existem só na conversa.
+* Cada fase produz um artefato rastreável (`spec.md`, `tasks.md`, e ADRs
+  para decisões técnicas relevantes — `22-adr.md`) — nunca decisões que
+  existem só na conversa.
 * Entre fases, prefira reduzir o contexto carregado ao mínimo necessário
   para a fase seguinte (ver "Divulgação Progressiva" em
   `12-precedencia-e-divulgacao.md`) — a seção "Handoff" no topo de cada

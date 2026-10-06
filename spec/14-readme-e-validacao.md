@@ -24,6 +24,7 @@ DEVE explicar:
 * Como adicionar uma nova skill.
 * Como adicionar um novo agente.
 * Como adicionar uma nova especificação.
+* Como registrar uma decisão técnica (ADR) e como decisões evoluem por substituição (`22-adr.md`).
 * Lista de comandos disponíveis e como usá-los (`.ai/commands/README.md`).
 * Como adicionar um novo comando.
 * Como funcionam os adaptadores de provedor.
@@ -53,7 +54,8 @@ projeto):
 | Novo componente/serviço/módulo | `context/architecture.md`, `context/structure.md` |
 | Nova configuração/variável de ambiente | `context/integrations.md`, instruções relacionadas |
 | Nova convenção adotada pelo time | `instructions/coding.md` (ou instrução de convenção equivalente) |
-| Nova dependência com peso arquitetural | `context/stack.md` |
+| Nova dependência com peso arquitetural | `context/stack.md`, e sugerir ADR (`22-adr.md`) |
+| Decisão técnica relevante tomada na tarefa | Sugerir ADR em `specs/decisions/` (`22-adr.md`) |
 
 Isso não substitui o mapeamento formal (`10-mapeamento-profundo.md`) — é
 uma checagem leve e contínua, não uma nova passada completa.

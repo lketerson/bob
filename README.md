@@ -66,6 +66,7 @@ Detalhes de cada camada em [`spec/`](spec/).
 | `/bob-add-mcp` | Configura um novo servidor MCP |
 | `/bob-create-spec` | Cria uma nova spec de feature |
 | `/bob-validate` | Checklist de validação de `.ai/` (leitura) |
+| `/bob-adr` | Registra uma decisão técnica como ADR, por instrução ou perguntas |
 | `/bob-techlead` | Orquestrador — decompõe a demanda e delega aos agentes |
 | `/bob-architect` | Plano de implementação / avaliação de alternativas |
 | `/bob-developer` | Implementação de uma tarefa pontual |

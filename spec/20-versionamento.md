@@ -72,10 +72,12 @@ Todo comando que grava algo em `.ai/` depois do bootstrap
 `/bob-add-mcp`, e a retomada/sincronização de `/bob-start` — ver
 `19-comandos.md`) DEVE adicionar uma entrada correspondente a
 `.ai/CHANGELOG.md` como parte do mesmo preview/aprovação daquele
-comando. `/bob-create-spec` NÃO adiciona entrada aqui — a evolução de
+comando. `/bob-create-spec` e `/bob-adr` NÃO adicionam entrada aqui — a evolução de
 uma feature specific tem seu próprio rastro em
 `.ai/specs/features/<slug>/` e, quando há board, no próprio board
-(`17-sdd-workflow.md`, `18-board-e-branch.md`); misturar os dois
+(`17-sdd-workflow.md`, `18-board-e-branch.md`), e as decisões do
+projeto têm o seu no índice de `.ai/specs/decisions/` (`22-adr.md`);
+misturar os dois
 transformaria o changelog do framework em um changelog de produto.
 
 ## Carimbo de versão (detecção de drift)
@@ -112,6 +114,8 @@ sincronizar, sem responder de novo nada do bootstrap já respondido:
    desde aquela versão (ex.: "a versão 1.3.0 adicionou o comando
    `/bob-security` e o arquivo `constitution/quality.md`") e o que
    precisaria ser adicionado/atualizado neste `.ai/` para acompanhar.
+   Ao sincronizar a partir de uma versão anterior à introdução de ADRs,
+   oferecer também a extração inicial de decisões (`22-adr.md`).
 3. Gerar o preview em `start.temp.md` (quando acionado via
    `/bob-start`) ou `update.temp.md` (quando acionado via
    `/bob-update`) com os arquivos que seriam criados/alterados.

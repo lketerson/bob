@@ -38,6 +38,9 @@ Perguntar ao usuário: escopo da configuração MCP (local ou global)
 Se a ferramenta suportar: perguntar ao usuário se deseja configurar
 uma barra de status (status line)
         ↓
+Listar decisões identificadas (código existente + bootstrap) e
+perguntar ao usuário quais registrar como ADR
+        ↓
 Gerar preview em start.temp.md e aguardar aprovação
         ↓
 Criar os arquivos definitivos em .ai/ e nos adaptadores
@@ -388,3 +391,15 @@ remover `start.temp.md`.
 
 Esta regra de preview se aplica a toda a etapa de bootstrap interativo —
 não apenas aos passos de agentes/skills/MCP.
+
+### Decisões iniciais como ADR (antes do preview)
+
+Antes de montar `start.temp.md`, o agente identifica as decisões
+técnicas já embutidas no código existente (a partir da descoberta —
+`13-descoberta-e-migracao.md`) e as tomadas durante este bootstrap
+(stack, integrações, arquitetura, divisão de pastas — Passo 4), lista ao
+usuário as candidatas a ADR e pergunta quais registrar. As escolhidas
+entram neste mesmo preview, em `.ai/specs/decisions/`, junto com o
+índice. Processo completo, inclusive como tratar decisões herdadas cujo
+motivo ninguém conhece, em `22-adr.md`, seção "Extração inicial no
+`/bob-start`".

@@ -10,7 +10,7 @@ O objetivo desta tarefa é criar a **fundação do framework**, não preencher t
 `bob_framework` em si (este repositório de especificação) — por exemplo,
 ao decidir se uma skill/agente/spec de exemplo adicional merece um
 template pronto aqui. Ela NÃO se aplica ao bootstrap executado por um
-agente num projeto-alvo: lá, os 8 agentes padrão, os 17 comandos e os 4
+agente num projeto-alvo: lá, os 8 agentes padrão, os 18 comandos e os 4
 arquivos de constituição DEVEM ser criados integralmente já na primeira
 execução, conforme `02-estrutura-diretorios.md`, `05-agentes.md` e
 `19-comandos.md` exigem sem exceção. "Não preencher toda skill/agente

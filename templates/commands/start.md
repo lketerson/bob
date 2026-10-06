@@ -46,7 +46,10 @@ Nenhuma — é o único comando do framework que pode ser executado antes de
    incluindo o preview obrigatório em `start.temp.md` (Passo 8) antes de
    gravar qualquer arquivo definitivo — incluindo `.ai/CHANGELOG.md`
    (entrada inicial) e o carimbo de versão em `.ai/README.md`
-   (`spec/20-versionamento.md`).
+   (`spec/20-versionamento.md`). Antes do preview, listar as decisões
+   técnicas identificadas no código existente e no próprio bootstrap e
+   perguntar quais registrar como ADR; as escolhidas entram no mesmo
+   preview (`spec/22-adr.md`, "Extração inicial no `/bob-start`").
 3. Se existir, comparar sua estrutura com
    `spec/02-estrutura-diretorios.md` e o carimbo de versão em
    `.ai/README.md` com a versão atual do `bob_framework`:
@@ -65,8 +68,9 @@ Nenhuma — é o único comando do framework que pode ser executado antes de
 ## Saída esperada
 
 Na primeira execução (sem `.ai/`): `.ai/` criado por completo, conforme
-`spec/02-estrutura-diretorios.md`, incluindo `.ai/commands/` e
-`.ai/CHANGELOG.md`. Com `.ai/` compatível e atualizado já existente:
+`spec/02-estrutura-diretorios.md`, incluindo `.ai/commands/`,
+`.ai/CHANGELOG.md` e os ADRs iniciais aprovados em
+`.ai/specs/decisions/`. Com `.ai/` compatível e atualizado já existente:
 nenhuma alteração de arquivo — apenas orientação. Com `.ai/` incompleto,
 desatualizado ou incompatível já existente: nenhuma alteração sem
 aprovação explícita do dev sobre retomar, sincronizar ou reorganizar.

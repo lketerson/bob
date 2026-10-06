@@ -38,6 +38,8 @@ PT-BR. Regras e exceções completas em [`spec/01-fundamentos.md`](spec/01-funda
 | 18 | [`spec/18-board-e-branch.md`](spec/18-board-e-branch.md) | Board e branch de fallback (só quando não há convenção própria), workflow de PR com gates, permissões MCP e revisão consultiva |
 | 19 | [`spec/19-comandos.md`](spec/19-comandos.md) | Sistema de comandos `/bob-[nome-comando]`, entrypoint `/bob-start`, comandos de agente, preview obrigatório |
 | 20 | [`spec/20-versionamento.md`](spec/20-versionamento.md) | Versionamento do `bob_framework` (`CHANGELOG.md`) e do `.ai/` de cada projeto-alvo (`.ai/CHANGELOG.md` + carimbo de versão), e o fluxo de sincronização quando desatualizado |
+| 21 | [`spec/21-us-e-cards.md`](spec/21-us-e-cards.md) | Fluxo opcional de US/Cards: `us.md` (happy path → edge cases), tasks enriquecidas em cards e os comandos `/bob-us-*` |
+| 22 | [`spec/22-adr.md`](spec/22-adr.md) | ADRs em `specs/decisions/`: quando sugerir, ciclo de vida (evolução por substituição), consulta pelos agentes e o comando `/bob-adr` |
 
 Templates prontos para copiar (agente mapper, workflow de mapeamento, e os 9 templates de `.ai/context/`) estão em [`templates/`](templates/) — ver [`README.md`](README.md) deste diretório.
 
@@ -48,6 +50,8 @@ Templates prontos para copiar (agente mapper, workflow de mapeamento, e os 9 tem
 **Adicionar só o mapeamento profundo de codebase a um projeto que já tem `.ai/`:** leia `spec/01` (idioma), `spec/09` (contexto) e `spec/10` (mapeamento profundo), depois copie os templates conforme `README.md` deste diretório.
 
 **Adicionar um novo agente, skill ou spec a um `.ai/` já existente:** leia apenas `spec/01` e o arquivo correspondente (`spec/05`, `spec/06` ou `spec/07`).
+
+**Registrar uma decisão técnica (ADR):** leia `spec/01` e `spec/22`.
 
 **Adicionar o sistema de comandos a um `.ai/` já existente:** leia `spec/19` e copie `templates/commands/` para `.ai/commands/`, renomeando cada arquivo (exceto `README.md`) com o prefixo `bob-` (ex.: `templates/commands/start.md` → `.ai/commands/bob-start.md`).
 

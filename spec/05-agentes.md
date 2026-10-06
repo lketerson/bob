@@ -23,6 +23,14 @@ de uma reprovação formal em CR/QA (`18-board-e-branch.md`) — o gatilho é
 sempre "uma implementação foi marcada como incorreta", não um mecanismo
 específico de board ou revisão.
 
+Independentemente do papel, todo agente DEVE consultar o índice de ADRs
+(`.ai/specs/decisions/README.md`, quando existir) antes de propor
+arquitetura, tecnologia ou padrão novo, sinalizando explicitamente ao
+dev qualquer proposta que contradiga um ADR aceito — e DEVE sugerir o
+registro de um ADR quando uma decisão técnica relevante for tomada na
+sessão, sem nunca criá-lo sem o aceite do dev (`22-adr.md`, "Quando
+sugerir" e "Consulta").
+
 Crie:
 
 ```text
@@ -79,7 +87,9 @@ Responsável por:
 * Ao final do trabalho de todos os agentes acionados, sempre acionar o
   Reviewer antes de considerar a demanda concluída.
 * Consolidar e apresentar ao dev um resumo do que foi feito por cada
-  área.
+  área — incluindo, quando houver, as decisões técnicas tomadas durante
+  a demanda que ainda não foram registradas, com a sugestão de
+  registrá-las como ADR (`22-adr.md`).
 
 O Techlead NÃO DEVE implementar código diretamente quando outro papel
 especializado (Developer, Architect) for mais apropriado para a tarefa
@@ -96,6 +106,9 @@ Responsável por:
 * Avaliar alternativas.
 * Identificar riscos.
 * Produzir planos de implementação.
+* Consultar os ADRs aceitos relevantes antes de propor alternativas, e,
+  depois que o dev escolher entre as alternativas apresentadas, sugerir
+  o registro da escolha como ADR (`22-adr.md`).
 * Aplicar os princípios SOLID (em especial SRP e DIP — ver
   `03-constituicao.md`) ao propor um plano ou avaliar alternativas,
   identificando pontos onde um módulo de alto nível dependeria

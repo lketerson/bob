@@ -32,7 +32,9 @@ pela avaliação dos outros três cenários.
    que o carimbo registrado em `.ai/README.md`.
 2. Resumir ao dev, em linguagem simples, o que mudou estruturalmente
    desde aquela versão e o que precisaria ser adicionado/atualizado
-   neste `.ai/` para acompanhar.
+   neste `.ai/` para acompanhar. Se a versão registrada for anterior à
+   introdução de ADRs, oferecer também a extração inicial de decisões
+   (`spec/22-adr.md`, "Extração inicial no `/bob-start`").
 3. Gerar o preview em `update.temp.md` com os arquivos que seriam
    criados/alterados.
 4. Aguardar aprovação explícita — uma mudança MAJOR do `bob_framework`

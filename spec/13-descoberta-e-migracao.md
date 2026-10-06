@@ -8,7 +8,7 @@ Antes de criar ou modificar o framework:
 2. Identificar a stack do projeto.
 3. Identificar arquivos de configuração de IA existentes — incluindo um `.ai/` (ou diretório equivalente) já presente, e se ele foi gerado por este framework ou não (ver seção "`.ai/` já existente, mas não gerado por este framework", abaixo).
 4. Identificar documentação existente.
-5. Identificar documentação de arquitetura existente.
+5. Identificar documentação de arquitetura existente — incluindo ADRs já registrados (ex.: `docs/adr/`) e decisões técnicas evidentes no código ou no histórico de Git, candidatas à extração inicial de ADRs (`22-adr.md`).
 6. Identificar diretrizes de contribuição existentes.
 7. Identificar convenções de teste existentes.
 8. Identificar convenções de Git existentes.

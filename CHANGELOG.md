@@ -5,6 +5,23 @@ Versionamento deste repositório (a especificação-fonte), seguindo
 gerado em cada projeto-alvo, ver `.ai/CHANGELOG.md` daquele projeto e
 `spec/20-versionamento.md`.
 
+## [1.8.0] - 2026-10-06
+
+Adiciona ADRs (Architecture Decision Records) para manter o registro de
+por que cada decisão técnica relevante foi tomada e como ela evoluiu:
+`spec/22-adr.md` formaliza `.ai/specs/decisions/` (até então só um
+diretório vazio na estrutura) com índice, template
+(`templates/specs/adr.md`) e ciclo de vida em que decisões aceitas são
+imutáveis e evoluem por substituição — um ADR novo substitui o antigo,
+preservando o histórico. ADRs nascem de três formas: extraídos já no
+`/bob-start`, a partir das decisões embutidas no código existente e das
+tomadas no próprio bootstrap; sugeridos pelos agentes quando uma
+decisão técnica relevante é tomada na sessão (nunca criados sem aceite
+do dev); ou registrados diretamente pelo novo comando `/bob-adr`, a
+partir de uma instrução ou de perguntas. Agentes passam a consultar os
+ADRs aceitos antes de propor arquitetura e a sinalizar qualquer
+proposta que os contradiga.
+
 ## [1.7.0] - 2026-09-28
 
 Adiciona `/bob-update`: sincroniza `.ai/` com a versão atual do

@@ -35,7 +35,7 @@ Crie a seguinte estrutura:
 │   ├── README.md
 │   ├── features/
 │   ├── requirements/
-│   └── decisions/
+│   └── decisions/              (ADRs — ver 22-adr.md)
 │
 ├── workflows/
 │   ├── feature.md
@@ -57,6 +57,7 @@ Crie a seguinte estrutura:
 │   ├── bob-create-spec.md
 │   ├── bob-validate.md
 │   ├── bob-update.md
+│   ├── bob-adr.md
 │   ├── bob-techlead.md
 │   ├── bob-architect.md
 │   ├── bob-developer.md

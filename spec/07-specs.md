@@ -11,6 +11,10 @@ Crie:
 
 Specs representam O QUE precisa ser construído.
 
+`decisions/` guarda os ADRs do projeto — o registro de POR QUE cada
+decisão técnica relevante foi tomada e como ela evoluiu. Estrutura,
+ciclo de vida e quando criar em `22-adr.md`.
+
 Uma especificação DEVERIA conter:
 
 ```text
@@ -52,4 +56,5 @@ Toda spec/PRD gerado por este framework DEVE começar com uma seção
 "Handoff": um resumo compacto (problema em uma frase, escopo aprovado,
 arquivos relevantes, decisões já tomadas, bloqueios) para que quem
 consumir o documento na fase seguinte não precise reler o documento
-inteiro.
+inteiro. Decisões já registradas como ADR são referenciadas pelo número
+(ex.: `ADR-0003`), sem repetir o conteúdo (`22-adr.md`).
