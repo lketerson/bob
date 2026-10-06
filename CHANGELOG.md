@@ -5,6 +5,12 @@ Versionamento deste repositório (a especificação-fonte), seguindo
 gerado em cada projeto-alvo, ver `.ai/CHANGELOG.md` daquele projeto e
 `spec/20-versionamento.md`.
 
+## [1.8.1] - 2026-10-06
+
+Corrige o lint de Markdown do CI, quebrado desde a v1.6.0: os três
+exemplos em bloco de código de `spec/21-us-e-cards.md` passam a declarar
+a linguagem (MD040). Nenhuma mudança de conteúdo.
+
 ## [1.8.0] - 2026-10-06
 
 Adiciona ADRs (Architecture Decision Records) para manter o registro de

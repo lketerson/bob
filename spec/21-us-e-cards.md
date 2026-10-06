@@ -135,7 +135,7 @@ Exemplos ilustrativos (adaptáveis, não prescrição):
 
 ### Exemplo de US (recorte)
 
-```
+```text
 Job Story: Quando um usuário faz login em um novo dispositivo, eu
 quero que o sistema reconheça esse dispositivo, para que possamos
 identificar acessos futuros.
@@ -154,7 +154,7 @@ Então o dispositivo passa a ser o principal da conta.
 
 ### Exemplo de card (recorte)
 
-```
+```markdown
 ## Escopo
 Criar o `RegisterPrimaryDeviceUsecase` com as regras de negócio dos
 critérios 1 e 2. Integrar no controller de login: retornar 403 para
@@ -175,7 +175,7 @@ Response 403 (novo): { "code": "UNRECOGNIZED_DEVICE" }
 
 ### Exemplo de PR de sync (recorte de título/corpo)
 
-```
+```text
 Título: [SYNC] - 1234, 1235, 1236 <nome da entrega> - DD/MM
 
 Corpo:
