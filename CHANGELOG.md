@@ -5,6 +5,14 @@ Versionamento deste repositório (a especificação-fonte), seguindo
 gerado em cada projeto-alvo, ver `.ai/CHANGELOG.md` daquele projeto e
 `spec/20-versionamento.md`.
 
+## [1.9.2] - 2026-10-07
+
+Renomeia o comando opcional `/bob-onboarding-abandonar` para
+`/bob-onboarding-abort`, alinhando-o ao padrão em inglês dos demais
+nomes de comando. Comportamento inalterado. Projetos que adotaram o
+agente Onboarding recebem a renomeação do arquivo em `.ai/commands/` e
+dos adaptadores na próxima sincronização (`/bob-update`).
+
 ## [1.9.1] - 2026-10-07
 
 Completa a lista de comandos do `README.md` da raiz, que omitia

@@ -300,7 +300,7 @@ Responsável por:
 * Guiar um novo desenvolvedor pelo repositório via um roadmap de estudo
   persistido em `onboarding/roadmap.md`, disparado pelo comando
   `/bob-onboarding` (ou gatilho equivalente) e interrompível a qualquer
-  momento via `/bob-onboarding-abandonar`.
+  momento via `/bob-onboarding-abort`.
 * Selecionar um fluxo de dados real do sistema para o dev estudar e
   verificar o aprendizado com perguntas.
 * Introduzir um bug controlado, como exercício prático, numa branch local
@@ -324,5 +324,5 @@ a caso.
 O processo completo está detalhado no template
 [`templates/agents/onboarding.md`](../templates/agents/onboarding.md) e no
 workflow [`templates/workflows/onboarding.md`](../templates/workflows/onboarding.md).
-Os comandos `/bob-onboarding` e `/bob-onboarding-abandonar` estão
+Os comandos `/bob-onboarding` e `/bob-onboarding-abort` estão
 detalhados em [`templates/commands/onboarding.md`](../templates/commands/onboarding.md).

@@ -5,7 +5,7 @@
 Atua como instrutor/mentor para um novo desenvolvedor entrando no projeto,
 conduzindo-o por um roteiro de estudo guiado sobre o repositório, disparado
 pelo comando `/bob-onboarding` (ou o gatilho equivalente suportado pela ferramenta
-de IA em uso). O comando `/bob-onboarding-abandonar` interrompe o processo e
+de IA em uso). O comando `/bob-onboarding-abort` interrompe o processo e
 limpa tudo, a qualquer momento.
 
 ## Responsabilidades
@@ -71,7 +71,7 @@ limpa tudo, a qualquer momento.
   `onboarding/task.md`.
 * Ao concluir o processo, propor a limpeza do material de onboarding
   (pasta e as duas branches locais), sem executá-la sem confirmação. Ao
-  processar `/bob-onboarding-abandonar`, executar essa mesma limpeza
+  processar `/bob-onboarding-abort`, executar essa mesma limpeza
   diretamente, já que o comando é a confirmação.
 
 ## Quando usar
@@ -79,7 +79,7 @@ limpa tudo, a qualquer momento.
 Quando o comando/gatilho de onboarding (`/bob-onboarding`) for invocado —
 tipicamente por um desenvolvedor novo no repositório, ou por alguém
 preparando o ambiente para um novo integrante da equipe. Também quando
-`/bob-onboarding-abandonar` for invocado, para processar o abandono e a
+`/bob-onboarding-abort` for invocado, para processar o abandono e a
 limpeza.
 
 ## Entradas
@@ -141,7 +141,7 @@ também `.ai/workflows/onboarding.md` depois de copiado.
   realmente escolhido (citando arquivos/trechos reais), nunca genéricas.
 * Na conclusão normal, o agente NÃO DEVE remover a pasta `onboarding/` nem
   as branches de onboarding sem confirmação explícita do dev. Já ao
-  processar `/bob-onboarding-abandonar`, o comando em si já é a confirmação,
+  processar `/bob-onboarding-abort`, o comando em si já é a confirmação,
   e o agente executa a limpeza diretamente.
 
 ## Saída esperada
@@ -152,4 +152,4 @@ o progresso atualizados a cada etapa concluída, servindo como única fonte
 de verdade para retomar em qualquer sessão futura — e, ao final da etapa
 de prática guiada, `task.md` (na branch `onboarding-bug-pratica`) com o
 card de bug pronto para o dev resolver. Ao concluir tudo (ou ao processar
-`/bob-onboarding-abandonar`), a pasta e as duas branches locais são removidas.
+`/bob-onboarding-abort`), a pasta e as duas branches locais são removidas.

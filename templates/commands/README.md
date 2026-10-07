@@ -51,9 +51,9 @@ de volta para `.ai/`, nunca cópias divergentes.
 | `/bob-update` | Atualiza o BoB e aplica as novas regras neste repositório. |
 | `/bob-adr` | Registra uma decisão técnica como ADR, a partir de uma instrução ou de perguntas. |
 | `/bob-onboarding` (opcional) | Guia um novo dev pelo repositório com um roteiro de estudo. |
-| `/bob-onboarding-abandonar` (opcional) | Interrompe e limpa o onboarding a qualquer momento. |
+| `/bob-onboarding-abort` (opcional) | Interrompe e limpa o onboarding a qualquer momento. |
 
-`/bob-onboarding` e `/bob-onboarding-abandonar` só existem se o agente
+`/bob-onboarding` e `/bob-onboarding-abort` só existem se o agente
 Onboarding foi aprovado durante o bootstrap.
 
 ## Comandos de agente

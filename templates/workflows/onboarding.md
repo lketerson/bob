@@ -2,7 +2,7 @@
 
 Fluxo executado pelo agente `onboarding` (ver `.ai/agents/onboarding.md`),
 disparado pelo comando `/bob-onboarding` (ou gatilho equivalente). A qualquer
-momento, o comando `/bob-onboarding-abandonar` interrompe o processo e limpa
+momento, o comando `/bob-onboarding-abort` interrompe o processo e limpa
 tudo — ver "Encerramento e limpeza" no final.
 
 ## Fluxo geral
@@ -29,7 +29,7 @@ Validação da correção (quando o dev resolver)                ↓
         ↓                                                    ↓
 Encerramento e limpeza (proposta ao concluir) ←───────────────┘
 
-Em qualquer uma das etapas acima, o comando /bob-onboarding-abandonar
+Em qualquer uma das etapas acima, o comando /bob-onboarding-abort
 interrompe o processo e executa a limpeza diretamente (sem precisar de
 confirmação adicional — o próprio comando já é a confirmação do dev).
 ```
@@ -37,7 +37,7 @@ confirmação adicional — o próprio comando já é a confirmação do dev).
 ## Restrição central: o agente nunca escreve código de produto
 
 Enquanto o processo de onboarding não estiver concluído nem abandonado
-(via `/bob-onboarding-abandonar`), o agente DEVE se limitar a explicar,
+(via `/bob-onboarding-abort`), o agente DEVE se limitar a explicar,
 orientar e responder perguntas do dev — NUNCA deve escrever, editar ou
 corrigir código de produto em nome do dev.
 
@@ -209,7 +209,7 @@ Na primeira invocação do comando:
 4. Informar ao dev que tudo o que for criado neste processo existe apenas
    nas branches locais de onboarding e nunca será publicado — e que isso é
    uma restrição absoluta, não uma preferência configurável. Informar
-   também que `/bob-onboarding-abandonar` pode ser usado a qualquer momento
+   também que `/bob-onboarding-abort` pode ser usado a qualquer momento
    para interromper e limpar tudo.
 
 ## 2. Leitura de documentação
@@ -383,7 +383,7 @@ Existem dois gatilhos para esta etapa:
 * **Conclusão normal:** quando `onboarding/roadmap.md` é marcado como
   concluído no Passo 7, o agente PROPÕE a limpeza e só executa mediante
   confirmação explícita do dev.
-* **Abandono (`/bob-onboarding-abandonar`):** a qualquer momento do processo
+* **Abandono (`/bob-onboarding-abort`):** a qualquer momento do processo
   (mesmo no meio de qualquer etapa anterior), o dev pode invocar este
   comando. Nesse caso o agente executa a limpeza diretamente, sem esperar
   confirmação adicional — o próprio comando já é a confirmação explícita

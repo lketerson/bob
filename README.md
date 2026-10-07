@@ -69,7 +69,7 @@ Detalhes de cada camada em [`spec/`](spec/).
 | `/bob-update` | Atualiza o BoB e aplica as novas regras neste repositório. |
 | `/bob-adr` | Registra uma decisão técnica como ADR, a partir de uma instrução ou de perguntas. |
 | `/bob-onboarding` (opcional) | Guia um novo dev pelo repositório com um roteiro de estudo. |
-| `/bob-onboarding-abandonar` (opcional) | Interrompe e limpa o onboarding a qualquer momento. |
+| `/bob-onboarding-abort` (opcional) | Interrompe e limpa o onboarding a qualquer momento. |
 
 #### Comandos de agente
 

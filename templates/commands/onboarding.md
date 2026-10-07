@@ -8,7 +8,7 @@ description: Guia um novo dev pelo repositório com um roteiro de estudo.
 
 Aciona o agente Onboarding: um instrutor que guia um novo desenvolvedor
 pelo repositório via um roteiro de estudo persistido em
-`onboarding/roadmap.md`. `/bob-onboarding-abandonar` interrompe o
+`onboarding/roadmap.md`. `/bob-onboarding-abort` interrompe o
 processo e limpa tudo, a qualquer momento.
 
 ## Sintaxe
@@ -17,7 +17,7 @@ processo e limpa tudo, a qualquer momento.
 se já houver uma sessão em andamento (`onboarding/roadmap.md`
 existente).
 
-`/bob-onboarding-abandonar` — sem argumentos; interrompe e limpa o
+`/bob-onboarding-abort` — sem argumentos; interrompe e limpa o
 processo imediatamente (o próprio comando já é a confirmação).
 
 ## Pré-condições
@@ -46,5 +46,5 @@ aprendizado → prática guiada com bug intencional (branch
 `onboarding/roadmap.md` (e, na etapa de prática guiada,
 `onboarding/task.md`) atualizados a cada etapa concluída, existindo
 apenas nas branches locais de onboarding — nunca publicadas. Ao concluir
-ou ao processar `/bob-onboarding-abandonar`, a pasta `onboarding/` e as
+ou ao processar `/bob-onboarding-abort`, a pasta `onboarding/` e as
 branches locais são removidas.

@@ -189,7 +189,7 @@ uma branch local dedicada (`onboarding-novo-dev`) que nunca deve ser
 publicada. Este agente só deve ser criado se o usuário confirmar
 explicitamente que o quer — ele não faz parte de nenhuma das três opções
 padrão porque tem um propósito distinto (treinamento de novos devs, não
-engenharia do dia a dia). `/bob-onboarding-abandonar` interrompe e limpa
+engenharia do dia a dia). `/bob-onboarding-abort` interrompe e limpa
 o processo a qualquer momento.
 
 Ao acionar o Techlead como entrada de uma demanda (`/bob-techlead`, ou a

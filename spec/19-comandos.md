@@ -44,7 +44,7 @@ Crie:
 
 * Prefixo `/bob-` obrigatório para **todo** comando do framework, sem
   exceção — inclusive os comandos do agente Onboarding, que usam
-  `/bob-onboarding` e `/bob-onboarding-abandonar`.
+  `/bob-onboarding` e `/bob-onboarding-abort`.
 * kebab-case depois do prefixo.
 * Entrypoint único: `/bob-start`.
 
@@ -110,9 +110,9 @@ existir — todos os demais comandos pressupõem `.ai/` já criado (por
 | `/bob-update` | Sincronização direta de `.ai/` com a versão atual do `bob_framework` (`20`), sem passar pela avaliação de cenário do `/bob-start` | Sim, como `update.temp.md` |
 | `/bob-adr` | Registro de uma decisão técnica como ADR em `.ai/specs/decisions/`, a partir de uma instrução ou de perguntas ao dev, inclusive substituindo um ADR anterior (`22`) | Sim, como `adr.temp.md` |
 | `/bob-onboarding` (opcional) | Agente Onboarding — instrutor para novos devs (`05`, `templates/agents/onboarding.md`) | Não — usa seu próprio mecanismo de roadmap/branch |
-| `/bob-onboarding-abandonar` (opcional) | Interrompe e limpa o processo de onboarding a qualquer momento | Não — o próprio comando já é a confirmação |
+| `/bob-onboarding-abort` (opcional) | Interrompe e limpa o processo de onboarding a qualquer momento | Não — o próprio comando já é a confirmação |
 
-`/bob-onboarding` e `/bob-onboarding-abandonar` só existem se o agente
+`/bob-onboarding` e `/bob-onboarding-abort` só existem se o agente
 Onboarding foi aprovado durante o bootstrap
 (`16-bootstrap-interativo.md`, Passo 3) — mesma condição de
 `templates/agents/onboarding.md` e `templates/workflows/onboarding.md`.
