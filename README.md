@@ -55,7 +55,7 @@ Detalhes de cada camada em [`spec/`](spec/).
 
 ### Comandos
 
-| Comando | Aciona |
+| Comando | O que faz |
 |---|---|
 | `/bob-start` | Inicia o BoB: configura o .ai/ na primeira vez, ou mostra o estado atual e os comandos disponíveis. |
 | `/bob-map-codebase` | Mapeia o repositório e atualiza o contexto do projeto em .ai/context/. |
@@ -68,6 +68,15 @@ Detalhes de cada camada em [`spec/`](spec/).
 | `/bob-validate` | Verifica se o .ai/ está completo e consistente, sem alterar nada. |
 | `/bob-update` | Atualiza o BoB e aplica as novas regras neste repositório. |
 | `/bob-adr` | Registra uma decisão técnica como ADR, a partir de uma instrução ou de perguntas. |
+| `/bob-onboarding` (opcional) | Guia um novo dev pelo repositório com um roteiro de estudo. |
+| `/bob-onboarding-abandonar` (opcional) | Interrompe e limpa o onboarding a qualquer momento. |
+
+#### Comandos de agente
+
+Invocam um papel específico diretamente, sem passar pela orquestração do `/bob-techlead`.
+
+| Comando | O que faz |
+|---|---|
 | `/bob-techlead` | Recebe uma demanda, divide por área e aciona os agentes certos, terminando com revisão. |
 | `/bob-architect` | Planeja a implementação e compara alternativas técnicas. |
 | `/bob-developer` | Implementa uma tarefa pontual, sem orquestração. |
@@ -75,9 +84,24 @@ Detalhes de cada camada em [`spec/`](spec/).
 | `/bob-tester` | Define a estratégia e os casos de teste de uma área. |
 | `/bob-researcher` | Pesquisa e compara opções técnicas. |
 | `/bob-security` | Analisa a segurança de uma mudança ou área (segredos, injeção, spoofing). |
-| `/bob-onboarding` (opcional) | Guia um novo dev pelo repositório com um roteiro de estudo. |
 
-Lista completa, com sintaxe e pré-condições de cada comando, em [`templates/commands/README.md`](templates/commands/README.md).
+#### Comandos de US/Cards (opcional)
+
+Só existem se o projeto adotou o fluxo de User Story e cards ([`spec/21`](spec/21-us-e-cards.md)).
+
+| Comando | O que faz |
+|---|---|
+| `/bob-us-create` | Cria a User Story (us.md) com o happy path. |
+| `/bob-us-edge-cases` | Completa a User Story com os edge cases, via perguntas. |
+| `/bob-us-plan` | Gera a spec técnica a partir da User Story aprovada. |
+| `/bob-us-to-task` | Quebra a spec em cards de tarefa. |
+| `/bob-us-task-implement` | Implementa uma task/card. |
+| `/bob-us-task-pr` | Abre o PR de uma task/card para a branch da User Story. |
+| `/bob-us-sync-pr` | Abre o PR que junta várias entregas da User Story. |
+| `/bob-us-pr-review` | Faz uma revisão consultiva de um PR. |
+| `/bob-us-pr-adjust` | Aplica os ajustes pedidos na revisão de um PR. |
+
+Sintaxe e pré-condições de cada comando, com sintaxe e pré-condições de cada comando, em [`templates/commands/README.md`](templates/commands/README.md).
 
 ## Documentação
 

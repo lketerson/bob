@@ -5,6 +5,14 @@ Versionamento deste repositório (a especificação-fonte), seguindo
 gerado em cada projeto-alvo, ver `.ai/CHANGELOG.md` daquele projeto e
 `spec/20-versionamento.md`.
 
+## [1.9.1] - 2026-10-07
+
+Completa a lista de comandos do `README.md` da raiz, que omitia
+`/bob-onboarding-abandonar` e os nove comandos `/bob-us-*`, agora
+agrupados como em `templates/commands/README.md` (utilitários, agente,
+US/Cards). `spec/19-comandos.md` passa a incluir o `README.md` da raiz
+entre os arquivos que DEVEM espelhar a lista canônica de comandos.
+
 ## [1.9.0] - 2026-10-06
 
 O bootstrap do `/bob-start` passa a perguntar, logo no Passo 0 junto

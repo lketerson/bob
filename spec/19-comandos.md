@@ -120,12 +120,13 @@ Onboarding foi aprovado durante o bootstrap
 ### Fonte única de verdade da lista de comandos
 
 A tabela acima, a de "Comandos de agente" e a de "Comandos de US/Cards"
-(abaixo) são a fonte canônica da lista de comandos do framework. `templates/commands/README.md` e a
+(abaixo) são a fonte canônica da lista de comandos do framework. `templates/commands/README.md`, a
+tabela de comandos do `README.md` da raiz deste repositório e a
 árvore de `commands/` em `02-estrutura-diretorios.md` DEVEM espelhar
 exatamente os mesmos comandos (nome e, no caso do primeiro, descrição de
 uma linha — idêntica ao `description` do frontmatter de cada
 `templates/commands/<nome>.md`) — qualquer comando adicionado, removido ou renomeado aqui DEVE
-ser replicado nos dois na mesma edição. Esta é uma disciplina de
+ser replicado em todos eles na mesma edição. Esta é uma disciplina de
 manutenção deste repositório (`bob_framework`), não uma checagem possível
 em tempo de bootstrap: uma vez copiado para `.ai/commands/README.md` de
 um projeto-alvo, aquele arquivo já não tem acesso a este para comparação.
