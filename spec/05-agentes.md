@@ -31,6 +31,12 @@ registro de um ADR quando uma decisão técnica relevante for tomada na
 sessão, sem nunca criá-lo sem o aceite do dev (`22-adr.md`, "Quando
 sugerir" e "Consulta").
 
+Independentemente do papel, todo agente DEVE respeitar os lints do
+projeto — nunca desabilitá-los ou suprimi-los para fazer o código passar
+sem aprovação — e DEVE propor transformar em lint toda regra
+verificável mecanicamente que surgir na sessão (`04-instrucoes.md`,
+"Lints").
+
 Crie:
 
 ```text
@@ -72,7 +78,9 @@ Responsável por:
   exige.
 * Acionar o agente mais apropriado para cada parte — nativamente
   (subagentes/orquestração da ferramenta), quando suportado, ou via
-  chamada linear/comando `/bob-[nome-do-agente]`, quando não.
+  chamada linear/comando `/bob-[nome-do-agente]`, quando não. Quando o
+  agente opcional Frontend existir, a parte de interface da demanda vai
+  para ele, não para o Developer.
 * Ao decompor a demanda, esperar que Architect e Developer apliquem
   SOLID/DIP/SRP de forma proativa durante o design e a implementação
   (ver seções correspondentes abaixo e `03-constituicao.md`) — o
@@ -283,6 +291,46 @@ correção, para decisão do dev ou do Techlead.
 O Reviewer (acima) consulta o Security para uma análise de segurança
 aprofundada como parte do workflow de code review
 (`08-workflows.md`).
+
+## Frontend (Especialista em UI) — papel opcional
+
+Não faz parte dos 8 papéis padrão; só é criado se o usuário confirmar
+seu uso durante o bootstrap interativo (ver
+`16-bootstrap-interativo.md`, Passo 3) — sugerido quando o projeto tem,
+ou terá, uma camada de interface (web, mobile ou desktop).
+
+Responsável por:
+
+* Descobrir o design system do projeto (tokens, biblioteca de
+  componentes, catálogo, guia de estilo) antes de qualquer trabalho de
+  UI, segui-lo como fonte de verdade visual e registrar onde ele vive
+  em `context/conventions.md`. Se não houver design system, avisar o dev
+  e propor um mínimo — nunca inventar um em silêncio.
+* Procurar componentes já existentes antes de criar um novo, e
+  reaproveitá-los ou estendê-los.
+* Evitar "AI slop" — interfaces genéricas, com cara de template gerado
+  por IA — aplicando um checklist explícito (gradientes genéricos,
+  emojis como ícones, cards dentro de cards, espaçamento fora da escala,
+  textos de placeholder etc.), e cobrir estados de interface e
+  acessibilidade básica.
+* Usar as skills de design `taste-skill`
+  (`https://github.com/Leonxlnx/taste-skill`) e `ui-ux-pro-max`
+  (`https://github.com/nextlevelbuilder/ui-ux-pro-max-skill`) quando
+  instaladas; quando não estiverem, propor a instalação ao dev uma vez,
+  via `/bob-add-skill`, sem nunca instalar sem aprovação.
+* Verificar a UI visualmente quando a ferramenta permitir, e dizer
+  explicitamente quando não foi possível.
+
+O design system do projeto prevalece sobre as preferências do agente e
+sobre as recomendações das skills de design. Adotar biblioteca de UI,
+framework de CSS ou criar/mudar o design system é decisão técnica
+(`17-sdd-workflow.md`), sujeita a aprovação e candidata a ADR
+(`22-adr.md`).
+
+O processo completo está no template
+[`templates/agents/frontend.md`](../templates/agents/frontend.md), e o
+comando `/bob-frontend` em
+[`templates/commands/frontend.md`](../templates/commands/frontend.md).
 
 ## Onboarding (Instrutor) — papel opcional
 

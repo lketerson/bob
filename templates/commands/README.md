@@ -67,6 +67,7 @@ Onboarding foi aprovado durante o bootstrap.
 | `/bob-tester` | Define a estratégia e os casos de teste de uma área. |
 | `/bob-researcher` | Pesquisa e compara opções técnicas. |
 | `/bob-security` | Analisa a segurança de uma mudança ou área (segredos, injeção, spoofing). |
+| `/bob-frontend` (opcional) | Cria ou revisa interface usando o design system e os componentes existentes, sem cara de IA. |
 
 Use estes comandos diretamente quando quiser um papel específico sem
 passar pela orquestração do `/bob-techlead`, ou quando a ferramenta de IA

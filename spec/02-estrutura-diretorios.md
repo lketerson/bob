@@ -26,7 +26,8 @@ Crie a seguinte estrutura:
 │   ├── tester.md
 │   ├── researcher.md
 │   ├── mapper.md
-│   └── security.md
+│   ├── security.md
+│   └── frontend.md                 (opcional — só se o agente Frontend foi aprovado)
 │
 ├── skills/
 │   └── README.md
@@ -65,6 +66,7 @@ Crie a seguinte estrutura:
 │   ├── bob-tester.md
 │   ├── bob-researcher.md
 │   ├── bob-security.md
+│   ├── bob-frontend.md             (opcional — só se o agente Frontend foi aprovado)
 │   ├── bob-onboarding.md           (opcional — só se o agente Onboarding foi aprovado)
 │   ├── bob-us-create.md            (opcional — só se o fluxo de US/Cards foi adotado)
 │   ├── bob-us-edge-cases.md        (opcional — idem)

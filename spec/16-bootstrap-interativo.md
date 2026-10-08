@@ -156,6 +156,12 @@ sinalizar ao usuário um exemplo concreto (caminho de arquivo e trecho
 relevante) junto ao ponto correspondente em `concerns.md` — o agente NÃO
 corrige automaticamente, apenas relata.
 
+Para cada ponto que possa ser verificado mecanicamente (ex.: biblioteca
+banida, import proibido entre módulos), propor também a regra de lint
+correspondente, seguindo `04-instrucoes.md`, "Lints" — e, se a
+descoberta não encontrou linter numa linguagem/camada em uso, propor um
+aqui, antes das regras. As regras aprovadas entram no preview do Passo 8.
+
 Se o usuário não tiver nenhum ponto a declarar no momento, registrar isso
 explicitamente ("nenhum ponto declarado até o momento") em vez de omitir
 a seção — permitindo que ela seja preenchida depois, sem precisar
@@ -181,8 +187,18 @@ NÃO assuma qual das três opções o usuário quer. NÃO crie agentes além dos
 aprovados pelo usuário, seja qual for a opção escolhida.
 
 Independentemente da opção escolhida acima, perguntar também — de forma
-separada — se o usuário deseja habilitar o agente opcional de
-**Onboarding** (ver `05-agentes.md` e `templates/agents/onboarding.md`):
+separada — se o usuário deseja habilitar o agente opcional
+**Frontend** (ver `05-agentes.md` e `templates/agents/frontend.md`): um
+especialista em UI que parte do design system e dos componentes
+existentes, evita "AI slop" e usa as skills de design `taste-skill` e
+`ui-ux-pro-max`, acionado pelo Techlead para a parte de interface das
+demandas ou diretamente por `/bob-frontend`. Sugerir quando a
+descoberta encontrar uma camada de interface (web, mobile ou desktop),
+ou quando o usuário descrever uma num projeto novo; em projetos sem UI
+(ex.: só backend, biblioteca, CLI), não perguntar.
+
+Perguntar também — de forma separada — se o usuário deseja habilitar o
+agente opcional de **Onboarding** (ver `05-agentes.md` e `templates/agents/onboarding.md`):
 um instrutor que guia novos desenvolvedores pelo repositório via o
 comando `/bob-onboarding` (ou gatilho equivalente da ferramenta), usando
 uma branch local dedicada (`onboarding-novo-dev`) que nunca deve ser
@@ -234,6 +250,18 @@ própria. Assim como o `grill-me` (abaixo), esta é uma exceção deliberada
 à regra geral de nunca assumir ou inventar uma origem/marketplace de
 skill — a origem do `ponytail` é fixada por decisão de projeto, não
 inventada pelo agente.
+
+Se o agente opcional Frontend foi aprovado no Passo 3, propor também as
+skills de design `taste-skill`, do Leonxlnx
+(`https://github.com/Leonxlnx/taste-skill`), e `ui-ux-pro-max`, do
+nextlevelbuilder
+(`https://github.com/nextlevelbuilder/ui-ux-pro-max-skill`), que o
+agente Frontend usa para elevar a qualidade visual e evitar "AI slop" —
+mesma exceção deliberada do `ponytail`: origens fixadas por decisão de
+projeto. Se já estiverem instaladas (no projeto ou na ferramenta de IA),
+só registrá-las em `.ai/skills/README.md`, sem propor de novo. Se o
+usuário recusar, registrar a recusa como sugestão futura no mesmo
+arquivo — o agente Frontend não volta a perguntar.
 
 ### Entendimento do projeto e definição de stack (`grill-me`)
 

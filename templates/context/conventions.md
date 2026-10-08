@@ -18,11 +18,15 @@ segue, registre os dois e aponte a diferença.
 
 ## Formatação e lint
 
-<!-- Ferramenta usada (e config file), regras relevantes que de fato são aplicadas (via CI ou pre-commit hook). -->
+<!-- Ferramenta usada (e config file), regras relevantes que de fato são aplicadas (via CI ou pre-commit hook). Para regras adicionadas pelo framework (04-instrucoes.md, "Lints"), registrar a regra e o motivo (erro corrigido, guardrail, convenção ou ADR de origem). Se não houver linter numa linguagem/camada em uso, registrar isso explicitamente. -->
 
 ## Padrões estruturais recorrentes
 
 <!-- Padrões de código que se repetem de forma consistente pelo projeto (ex.: como um módulo expõe sua API pública, como erros são propagados, como componentes recebem props/dependências). Cite exemplos com `caminho`. -->
+
+## Design system
+
+<!-- Só para projetos com interface. Onde vive o design system (tokens, tema, biblioteca de componentes, catálogo como Storybook, guia de estilo/Figma), com `caminho`. Se não houver um, registrar explicitamente "nenhum design system identificado". -->
 
 ## Convenções de Git
 

@@ -5,6 +5,31 @@ Versionamento deste repositório (a especificação-fonte), seguindo
 gerado em cada projeto-alvo, ver `.ai/CHANGELOG.md` daquele projeto e
 `spec/20-versionamento.md`.
 
+## [1.10.0] - 2026-10-08
+
+Adiciona o agente opcional Frontend (`templates/agents/frontend.md`) e
+o comando `/bob-frontend`: um especialista em UI que, antes de qualquer
+trabalho de interface, descobre o design system do projeto e procura
+componentes existentes para reaproveitar, evita ativamente o "AI slop"
+com um checklist explícito, cobre estados de interface e acessibilidade
+básica, e verifica a UI visualmente quando a ferramenta permite. Usa as
+skills de design `taste-skill` e `ui-ux-pro-max` quando instaladas, e
+propõe sua instalação quando não estão — sempre subordinadas ao design
+system do projeto. O bootstrap (`spec/16`, Passo 3) oferece o agente
+quando detecta uma camada de interface, o Passo 4 propõe as duas
+skills, e o Techlead passa a encaminhar a parte de UI das demandas ao
+Frontend quando ele existe.
+
+Adiciona também uma seção "Lints" em `spec/04-instrucoes.md`: o
+framework passa a identificar o linter de cada linguagem/camada do
+projeto e a propor um quando não houver, e todo agente passa a propor
+transformar em lint as regras verificáveis mecanicamente que surgirem
+em erros corrigidos, guardrails, convenções, ADRs ou achados do
+`/bob-concerns` — preferindo regras já existentes do linter, medindo
+as violações atuais antes de habilitar, e nunca desabilitando lint
+para fazer o código passar sem aprovação. O bootstrap (`spec/16`,
+Passo 2) já propõe as regras correspondentes aos guardrails declarados.
+
 ## [1.9.2] - 2026-10-07
 
 Renomeia o comando opcional `/bob-onboarding-abandonar` para

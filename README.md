@@ -84,6 +84,7 @@ Invocam um papel específico diretamente, sem passar pela orquestração do `/bo
 | `/bob-tester` | Define a estratégia e os casos de teste de uma área. |
 | `/bob-researcher` | Pesquisa e compara opções técnicas. |
 | `/bob-security` | Analisa a segurança de uma mudança ou área (segredos, injeção, spoofing). |
+| `/bob-frontend` (opcional) | Cria ou revisa interface usando o design system e os componentes existentes, sem cara de IA. |
 
 #### Comandos de US/Cards (opcional)
 

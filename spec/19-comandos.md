@@ -37,6 +37,7 @@ Crie:
 ├── bob-tester.md
 ├── bob-researcher.md
 ├── bob-security.md
+├── bob-frontend.md                 (só se o agente Frontend foi aprovado — 16, Passo 3)
 └── bob-onboarding.md               (só se o agente Onboarding foi aprovado — 16, Passo 3)
 ```
 
@@ -149,6 +150,10 @@ de múltiplos agentes (`11-adaptadores.md`, "Suporte a multiagentes"):
 | `/bob-tester` | Estratégia e casos de teste |
 | `/bob-researcher` | Investigação/comparação técnica |
 | `/bob-security` | Análise de segurança focada |
+| `/bob-frontend` (opcional) | Especialista em UI — design system, componentes existentes, anti-slop (`templates/agents/frontend.md`) |
+
+`/bob-frontend` só existe se o agente opcional Frontend foi aprovado
+durante o bootstrap (`16-bootstrap-interativo.md`, Passo 3).
 
 Nenhum desses comandos requer preview em `[slug].temp.md` — são
 invocações de agente, não criação/alteração de arquivo de `.ai/`.
