@@ -3,191 +3,264 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0f0f0e" />
   <title>BoB — Build on Base</title>
-  <meta name="description" content="BoB é uma especificação que um agente de IA lê para criar e manter .ai/, a fonte única de verdade de engenharia de IA de um projeto." />
+  <meta name="description" content="BoB é uma especificação que um agente de IA lê para criar e manter o .ai/, a fonte única de verdade de engenharia de IA de um projeto." />
+  <link rel="canonical" href="https://lketerson.github.io/bob/" />
+  <meta property="og:type" content="website" />
   <meta property="og:title" content="BoB — Build on Base" />
   <meta property="og:description" content="Uma única fonte de verdade de engenharia de IA por projeto, para qualquer agente e qualquer desenvolvedor." />
-  <meta property="og:image" content="assets/bob-hero.jpg" />
-  <link rel="icon" href="assets/bob-hero.jpg" />
+  <meta property="og:url" content="https://lketerson.github.io/bob/" />
+  <meta property="og:image" content="https://lketerson.github.io/bob/assets/bob-hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
   <header class="top">
-    <a class="brand" href="#">BoB</a>
-    <nav>
+    <a class="brand" href="#topo" aria-label="BoB, início">BoB</a>
+    <nav aria-label="Principal">
       <a href="#como-funciona">Como funciona</a>
       <a href="#quickstart">Quickstart</a>
       <a href="#comandos">Comandos</a>
       <a href="#faq">FAQ</a>
-      <a class="gh" href="https://github.com/lketerson/bob">GitHub</a>
+      <a class="ext" href="https://github.com/lketerson/bob">GitHub <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
+  <main id="conteudo">
+    <section class="hero" id="topo">
       <div class="hero-text">
         <p class="eyebrow">AI Engineering Framework</p>
-        <h1>Build on Base.</h1>
+        <h1>Build<br />on Base.</h1>
         <p class="lead">
           Uma especificação que o seu agente de IA lê para criar e manter o
-          <code>.ai/</code> — a fonte única de verdade de engenharia de IA do
-          projeto. Agnóstica de stack e de provedor.
+          <code>.ai/</code>: a fonte única de verdade de engenharia de IA do
+          projeto, independente de stack e de provedor.
         </p>
         <div class="cta">
-          <a class="btn primary" href="#quickstart">Começar</a>
-          <a class="btn" href="https://github.com/lketerson/bob">Ver no GitHub</a>
+          <a class="btn" href="#quickstart">Começar</a>
+          <a class="textlink" href="https://github.com/lketerson/bob">Ver no GitHub <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <img class="hero-img" src="assets/bob-hero.jpg" width="900" height="600" alt="BoB, personagem de contorno branco com cara de bravo, martelando um prego em duas tábuas." />
+      <figure class="hero-fig">
+        <img src="assets/bob-hero.jpg" width="900" height="600" alt="BoB, personagem de contorno branco e cara de bravo, martelando um prego em duas tábuas." />
+      </figure>
     </section>
 
-    <section class="block" id="motivacao">
+    <section class="block why" id="motivacao">
       <h2>Por que existe</h2>
-      <p>
-        A evolução rápida da IA trouxe um crescimento desenfreado de
-        documentação nos repositórios, sem um padrão comum: cada desenvolvedor
-        acaba montando seu próprio setup, gerando resultados destoantes entre
-        pessoas do mesmo time.
-      </p>
-      <p>
-        BoB resolve isso com uma única fonte de verdade por projeto, que
-        qualquer agente e qualquer desenvolvedor segue da mesma forma.
-        Ferramentas específicas (Claude, Copilot, Cursor, Codex…) recebem só
-        um adaptador mínimo apontando de volta para <code>.ai/</code>, nunca
-        uma cópia divergente.
-      </p>
+      <div class="prose">
+        <p>
+          A IA mudou rápido e os repositórios encheram de documentação sem
+          padrão. Cada desenvolvedor monta o próprio setup, e o time inteiro
+          colhe resultados diferentes.
+        </p>
+        <p>
+          O BoB define uma fonte de verdade por projeto, que qualquer agente e
+          qualquer pessoa segue do mesmo jeito. Claude, Copilot, Cursor e
+          Codex recebem só um adaptador mínimo apontando de volta para
+          <code>.ai/</code>, nunca uma cópia que diverge.
+        </p>
+      </div>
     </section>
 
     <section class="block" id="como-funciona">
       <h2>Como funciona</h2>
-      <p class="sub">Nove camadas, cada uma com um papel claro.</p>
-      <ul class="layers">
-        <li><b>Constituição</b><span>princípios imutáveis</span></li>
-        <li><b>Instruções</b><span>comportamento de engenharia</span></li>
-        <li><b>Agentes</b><span>papéis</span></li>
-        <li><b>Skills</b><span>conhecimento especializado</span></li>
-        <li><b>Specs</b><span>o que deve ser construído</span></li>
-        <li><b>Workflows</b><span>como tarefas comuns são executadas</span></li>
-        <li><b>Comandos</b><span>como tarefas são acionadas</span></li>
-        <li><b>Contexto</b><span>conhecimento específico do projeto</span></li>
-        <li><b>Adaptadores</b><span>tornam tudo consumível por qualquer ferramenta de IA</span></li>
-      </ul>
-      <p><a class="more" href="https://github.com/lketerson/bob/tree/master/spec">Ler a especificação completa →</a></p>
+      <p class="sub">Nove camadas. Oito delas viram uma pasta dentro de <code>.ai/</code>.</p>
+      <ol class="layers">
+        <li><span class="n">01</span><span class="name">Constituição</span><span class="what">Princípios imutáveis</span><code>constitution/</code></li>
+        <li><span class="n">02</span><span class="name">Instruções</span><span class="what">Comportamento de engenharia</span><code>instructions/</code></li>
+        <li><span class="n">03</span><span class="name">Agentes</span><span class="what">Papéis</span><code>agents/</code></li>
+        <li><span class="n">04</span><span class="name">Skills</span><span class="what">Conhecimento especializado</span><code>skills/</code></li>
+        <li><span class="n">05</span><span class="name">Specs</span><span class="what">O que deve ser construído</span><code>specs/</code></li>
+        <li><span class="n">06</span><span class="name">Workflows</span><span class="what">Como tarefas comuns são executadas</span><code>workflows/</code></li>
+        <li><span class="n">07</span><span class="name">Comandos</span><span class="what">Como tarefas são acionadas</span><code>commands/</code></li>
+        <li><span class="n">08</span><span class="name">Contexto</span><span class="what">Conhecimento específico do projeto</span><code>context/</code></li>
+        <li><span class="n">09</span><span class="name">Adaptadores</span><span class="what">Tornam tudo consumível por qualquer ferramenta</span><code>fora de .ai/</code></li>
+      </ol>
+      <p><a class="textlink" href="https://github.com/lketerson/bob/tree/master/spec">Ler a especificação completa <span aria-hidden="true">→</span></a></p>
     </section>
 
     <section class="block" id="quickstart">
       <h2>Quickstart</h2>
-      <div class="cols">
-        <article class="card">
-          <h3>Novo projeto</h3>
+      <p class="sub">Dois pontos de partida, o mesmo comando.</p>
+
+      <div class="copy" role="group" aria-label="Comando de início">
+        <span class="prompt" aria-hidden="true">$</span>
+        <code id="start-cmd">/bob-start</code>
+        <button type="button" id="copy-btn">Copiar</button>
+        <span class="sr" id="copy-status" role="status" aria-live="polite"></span>
+      </div>
+
+      <div class="paths">
+        <div class="path">
+          <h3>Projeto novo</h3>
           <ol>
-            <li>Aponte seu agente de IA para o repositório do BoB e peça para seguir <a href="https://github.com/lketerson/bob/blob/master/start.md"><code>start.md</code></a>.</li>
-            <li>Rode o comando abaixo.</li>
-            <li>Responda o bootstrap interativo (idioma, ferramentas de IA, board, agentes, skills, MCPs) e aprove o preview antes da gravação.</li>
-            <li><code>.ai/</code> nasce estruturado para o projeto.</li>
+            <li>Aponte seu agente para o repositório do BoB e peça para seguir <a href="https://github.com/lketerson/bob/blob/master/start.md"><code>start.md</code></a>.</li>
+            <li>Rode <code>/bob-start</code>.</li>
+            <li>Responda o bootstrap: idioma, ferramentas de IA, board, agentes, skills, MCPs. Aprove o preview em <code>start.temp.md</code>.</li>
+            <li>O <code>.ai/</code> nasce estruturado para o projeto.</li>
           </ol>
-        </article>
-        <article class="card">
+        </div>
+        <div class="path">
           <h3>Codebase existente</h3>
           <ol>
             <li>Mesmo ponto de partida: <code>start.md</code> e <code>/bob-start</code>.</li>
-            <li>O BoB descobre stack, docs e convenções antes de perguntar qualquer coisa.</li>
-            <li>Se já existir um <code>.ai/</code> de outra origem, ele pergunta se você quer migrar — nunca reorganiza em silêncio.</li>
+            <li>Antes de perguntar qualquer coisa, o BoB descobre stack, docs e convenções que já existem.</li>
+            <li>Se já houver um <code>.ai/</code> de outra origem, ele pergunta se você quer migrar. Nunca reorganiza em silêncio.</li>
             <li>Rode <code>/bob-map-codebase</code> para mapear o contexto com evidência real.</li>
           </ol>
-        </article>
-      </div>
-      <div class="copy">
-        <code id="start-cmd">/bob-start</code>
-        <button type="button" id="copy-btn" aria-label="Copiar comando">Copiar</button>
+        </div>
       </div>
     </section>
 
     <section class="block" id="comandos">
-      <h2>Comandos</h2>
+      <div class="cmd-head">
+        <h2>Comandos</h2>
+        <label class="filter">
+          <span class="sr">Filtrar comandos</span>
+          <input type="search" id="cmd-filter" placeholder="Filtrar comandos" autocomplete="off" />
+        </label>
+      </div>
 
-      <h3>Essenciais</h3>
-      <dl class="cmds">
-        <div><dt>/bob-start</dt><dd>Configura o .ai/ na primeira vez, ou mostra o estado atual e os comandos.</dd></div>
-        <div><dt>/bob-map-codebase</dt><dd>Mapeia o repositório e atualiza o contexto em .ai/context/.</dd></div>
-        <div><dt>/bob-concerns</dt><dd>Audita SOLID, duplicação e nomenclatura.</dd></div>
-        <div><dt>/bob-create-agent</dt><dd>Cria um novo papel de agente.</dd></div>
-        <div><dt>/bob-create-skill</dt><dd>Cria uma skill do zero.</dd></div>
-        <div><dt>/bob-add-skill</dt><dd>Instala uma skill pronta de um marketplace.</dd></div>
-        <div><dt>/bob-add-mcp</dt><dd>Configura um servidor MCP a partir de um link.</dd></div>
-        <div><dt>/bob-create-spec</dt><dd>Cria a especificação de uma nova feature.</dd></div>
-        <div><dt>/bob-validate</dt><dd>Verifica se o .ai/ está completo e consistente, sem alterar nada.</dd></div>
-        <div><dt>/bob-update</dt><dd>Atualiza o BoB e aplica as novas regras no repositório.</dd></div>
-        <div><dt>/bob-adr</dt><dd>Registra uma decisão técnica como ADR.</dd></div>
-        <div><dt>/bob-onboarding</dt><dd>Guia um novo dev pelo repositório. <em>Opcional.</em></dd></div>
-      </dl>
+      <div class="group">
+        <div class="group-label">
+          <h3>Essenciais</h3>
+        </div>
+        <dl class="cmds">
+          <div><dt>/bob-start</dt><dd>Configura o .ai/ na primeira vez, ou mostra o estado atual e os comandos.</dd></div>
+          <div><dt>/bob-map-codebase</dt><dd>Mapeia o repositório e atualiza o contexto em .ai/context/.</dd></div>
+          <div><dt>/bob-concerns</dt><dd>Audita SOLID, duplicação e nomenclatura.</dd></div>
+          <div><dt>/bob-create-agent</dt><dd>Cria um novo papel de agente.</dd></div>
+          <div><dt>/bob-create-skill</dt><dd>Cria uma skill do zero.</dd></div>
+          <div><dt>/bob-add-skill</dt><dd>Instala uma skill pronta de um marketplace.</dd></div>
+          <div><dt>/bob-add-mcp</dt><dd>Configura um servidor MCP a partir de um link.</dd></div>
+          <div><dt>/bob-create-spec</dt><dd>Cria a especificação de uma nova feature.</dd></div>
+          <div><dt>/bob-validate</dt><dd>Verifica se o .ai/ está completo e consistente, sem alterar nada.</dd></div>
+          <div><dt>/bob-update</dt><dd>Atualiza o BoB e aplica as novas regras no repositório.</dd></div>
+          <div><dt>/bob-adr</dt><dd>Registra uma decisão técnica como ADR.</dd></div>
+          <div><dt>/bob-onboarding</dt><dd>Guia um novo dev pelo repositório. <small>opcional</small></dd></div>
+        </dl>
+      </div>
 
-      <h3>Agentes</h3>
-      <p class="sub">Invocam um papel diretamente, sem passar pela orquestração do <code>/bob-techlead</code>.</p>
-      <dl class="cmds">
-        <div><dt>/bob-techlead</dt><dd>Divide a demanda por área e aciona os agentes certos, terminando com revisão.</dd></div>
-        <div><dt>/bob-architect</dt><dd>Planeja a implementação e compara alternativas.</dd></div>
-        <div><dt>/bob-developer</dt><dd>Implementa uma tarefa pontual.</dd></div>
-        <div><dt>/bob-reviewer</dt><dd>Revisa uma mudança já implementada.</dd></div>
-        <div><dt>/bob-tester</dt><dd>Define a estratégia e os casos de teste.</dd></div>
-        <div><dt>/bob-researcher</dt><dd>Pesquisa e compara opções técnicas.</dd></div>
-        <div><dt>/bob-security</dt><dd>Analisa a segurança de uma mudança ou área.</dd></div>
-        <div><dt>/bob-frontend</dt><dd>Cria ou revisa interface com o design system existente. <em>Opcional.</em></dd></div>
-      </dl>
+      <div class="group">
+        <div class="group-label">
+          <h3>Agentes</h3>
+          <p>Chamam um papel direto, sem passar pela orquestração do <code>/bob-techlead</code>.</p>
+        </div>
+        <dl class="cmds">
+          <div><dt>/bob-techlead</dt><dd>Divide a demanda por área e aciona os agentes certos, terminando com revisão.</dd></div>
+          <div><dt>/bob-architect</dt><dd>Planeja a implementação e compara alternativas.</dd></div>
+          <div><dt>/bob-developer</dt><dd>Implementa uma tarefa pontual.</dd></div>
+          <div><dt>/bob-reviewer</dt><dd>Revisa uma mudança já implementada.</dd></div>
+          <div><dt>/bob-tester</dt><dd>Define a estratégia e os casos de teste.</dd></div>
+          <div><dt>/bob-researcher</dt><dd>Pesquisa e compara opções técnicas.</dd></div>
+          <div><dt>/bob-security</dt><dd>Analisa a segurança de uma mudança ou área.</dd></div>
+          <div><dt>/bob-frontend</dt><dd>Cria ou revisa interface com o design system existente. <small>opcional</small></dd></div>
+        </dl>
+      </div>
 
-      <h3>User Story e cards <span class="tag">opcional</span></h3>
-      <p class="sub">Do happy path ao PR, para projetos que adotam o fluxo de US e cards.</p>
-      <dl class="cmds">
-        <div><dt>/bob-us-create</dt><dd>Cria a User Story com o happy path.</dd></div>
-        <div><dt>/bob-us-edge-cases</dt><dd>Completa com os edge cases, via perguntas.</dd></div>
-        <div><dt>/bob-us-plan</dt><dd>Gera a spec técnica da US aprovada.</dd></div>
-        <div><dt>/bob-us-to-task</dt><dd>Quebra a spec em cards de tarefa.</dd></div>
-        <div><dt>/bob-us-task-implement</dt><dd>Implementa uma task.</dd></div>
-        <div><dt>/bob-us-task-pr</dt><dd>Abre o PR de uma task para a branch da US.</dd></div>
-        <div><dt>/bob-us-sync-pr</dt><dd>Abre o PR que junta várias entregas da US.</dd></div>
-        <div><dt>/bob-us-pr-review</dt><dd>Faz uma revisão consultiva de um PR.</dd></div>
-        <div><dt>/bob-us-pr-adjust</dt><dd>Aplica os ajustes pedidos na revisão.</dd></div>
-      </dl>
+      <div class="group">
+        <div class="group-label">
+          <h3>User Story e cards</h3>
+          <p>Do happy path ao PR. Só existem se o projeto adotou o fluxo de US e cards. <small>opcional</small></p>
+        </div>
+        <dl class="cmds">
+          <div><dt>/bob-us-create</dt><dd>Cria a User Story com o happy path.</dd></div>
+          <div><dt>/bob-us-edge-cases</dt><dd>Completa com os edge cases, via perguntas.</dd></div>
+          <div><dt>/bob-us-plan</dt><dd>Gera a spec técnica da US aprovada.</dd></div>
+          <div><dt>/bob-us-to-task</dt><dd>Quebra a spec em cards de tarefa.</dd></div>
+          <div><dt>/bob-us-task-implement</dt><dd>Implementa uma task.</dd></div>
+          <div><dt>/bob-us-task-pr</dt><dd>Abre o PR de uma task para a branch da US.</dd></div>
+          <div><dt>/bob-us-sync-pr</dt><dd>Abre o PR que junta várias entregas da US.</dd></div>
+          <div><dt>/bob-us-pr-review</dt><dd>Faz uma revisão consultiva de um PR.</dd></div>
+          <div><dt>/bob-us-pr-adjust</dt><dd>Aplica os ajustes pedidos na revisão.</dd></div>
+        </dl>
+      </div>
+
+      <p class="empty" id="cmd-empty" hidden>Nenhum comando encontrado.</p>
     </section>
 
     <section class="block" id="faq">
       <h2>FAQ</h2>
-      <details>
-        <summary>Por que "BoB"?</summary>
-        <p><b>B</b>uild <b>o</b>n <b>B</b>ase — o nome do framework e do diretório canônico (<code>.ai/</code>) que ele cria em cada projeto.</p>
-      </details>
-      <details>
-        <summary>Por que a spec é dividida em vários arquivos?</summary>
-        <p>Um arquivo único obrigaria a carregar conteúdo irrelevante para a tarefa atual. <code>spec/</code> segue divulgação progressiva: leia só o que a tarefa precisa.</p>
-      </details>
-      <details>
-        <summary>Qual a diferença entre spec/ e templates/?</summary>
-        <p><code>spec/</code> define o que cada peça do <code>.ai/</code> deve conter e quais regras seguir. <code>templates/</code> é o conteúdo já pronto para copiar.</p>
-      </details>
+      <dl class="faq">
+        <div>
+          <dt>Por que “BoB”?</dt>
+          <dd><b>B</b>uild <b>o</b>n <b>B</b>ase: o nome do framework e do diretório canônico (<code>.ai/</code>) que ele cria em cada projeto.</dd>
+        </div>
+        <div>
+          <dt>Por que a spec é dividida em vários arquivos?</dt>
+          <dd>Um arquivo único obrigaria a carregar conteúdo que a tarefa não usa. <code>spec/</code> segue divulgação progressiva: leia só o que a tarefa pede.</dd>
+        </div>
+        <div>
+          <dt>Qual a diferença entre <code>spec/</code> e <code>templates/</code>?</dt>
+          <dd><code>spec/</code> define o que cada peça do <code>.ai/</code> deve conter e quais regras seguir. <code>templates/</code> é o conteúdo pronto para copiar.</dd>
+        </div>
+      </dl>
     </section>
   </main>
 
   <footer>
-    <span>BoB — Build on Base · <a href="https://github.com/lketerson/bob/blob/master/LICENSE">MIT</a></span>
-    <span>
-      <a href="https://github.com/lketerson/bob/blob/master/CHANGELOG.md">Changelog</a> ·
-      <a href="https://github.com/lketerson/bob/blob/master/CONTRIBUTING.md">Contribuir</a> ·
+    <span>BoB · Build on Base · <a href="https://github.com/lketerson/bob/blob/master/LICENSE">MIT</a></span>
+    <nav aria-label="Rodapé">
+      <a href="https://github.com/lketerson/bob/blob/master/CHANGELOG.md">Changelog</a>
+      <a href="https://github.com/lketerson/bob/blob/master/CONTRIBUTING.md">Contribuir</a>
       <a href="https://github.com/lketerson/bob">GitHub</a>
-    </span>
+    </nav>
   </footer>
 
   <script>
-    var btn = document.getElementById("copy-btn");
-    var cmd = document.getElementById("start-cmd");
-    btn.addEventListener("click", function () {
-      var done = function () {
-        btn.textContent = "Copiado";
-        setTimeout(function () { btn.textContent = "Copiar"; }, 1500);
-      };
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(cmd.textContent).then(done, function () {});
+    (function () {
+      var btn = document.getElementById("copy-btn");
+      var cmd = document.getElementById("start-cmd");
+      var status = document.getElementById("copy-status");
+      btn.addEventListener("click", function () {
+        if (!navigator.clipboard) { return; }
+        navigator.clipboard.writeText(cmd.textContent).then(function () {
+          btn.textContent = "Copiado";
+          status.textContent = "Comando copiado";
+          setTimeout(function () { btn.textContent = "Copiar"; status.textContent = ""; }, 1600);
+        }, function () {});
+      });
+
+      var input = document.getElementById("cmd-filter");
+      var rows = document.querySelectorAll(".cmds > div");
+      var groups = document.querySelectorAll(".group");
+      var empty = document.getElementById("cmd-empty");
+      input.addEventListener("input", function () {
+        var q = input.value.trim().toLowerCase();
+        rows.forEach(function (row) {
+          row.hidden = q !== "" && row.textContent.toLowerCase().indexOf(q) === -1;
+        });
+        var any = false;
+        groups.forEach(function (g) {
+          var visible = g.querySelector(".cmds > div:not([hidden])") !== null;
+          g.hidden = !visible;
+          any = any || visible;
+        });
+        empty.hidden = any;
+      });
+
+      var targets = document.querySelectorAll(".block");
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+          });
+        }, { rootMargin: "0px 0px -8% 0px" });
+        targets.forEach(function (t) { io.observe(t); });
+      } else {
+        targets.forEach(function (t) { t.classList.add("in"); });
       }
-    });
+    })();
   </script>
 </body>
 </html>
