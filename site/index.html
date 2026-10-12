@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BoB — Build on Base</title>
+  <meta name="description" content="BoB é uma especificação que um agente de IA lê para criar e manter .ai/, a fonte única de verdade de engenharia de IA de um projeto." />
+  <meta property="og:title" content="BoB — Build on Base" />
+  <meta property="og:description" content="Uma única fonte de verdade de engenharia de IA por projeto, para qualquer agente e qualquer desenvolvedor." />
+  <meta property="og:image" content="assets/bob-hero.jpg" />
+  <link rel="icon" href="assets/bob-hero.jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#">BoB</a>
+    <nav>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#quickstart">Quickstart</a>
+      <a href="#comandos">Comandos</a>
+      <a href="#faq">FAQ</a>
+      <a class="gh" href="https://github.com/lketerson/bob">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">AI Engineering Framework</p>
+        <h1>Build on Base.</h1>
+        <p class="lead">
+          Uma especificação que o seu agente de IA lê para criar e manter o
+          <code>.ai/</code> — a fonte única de verdade de engenharia de IA do
+          projeto. Agnóstica de stack e de provedor.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#quickstart">Começar</a>
+          <a class="btn" href="https://github.com/lketerson/bob">Ver no GitHub</a>
+        </div>
+      </div>
+      <img class="hero-img" src="assets/bob-hero.jpg" width="900" height="600" alt="BoB, personagem de contorno branco com cara de bravo, martelando um prego em duas tábuas." />
+    </section>
+
+    <section class="block" id="motivacao">
+      <h2>Por que existe</h2>
+      <p>
+        A evolução rápida da IA trouxe um crescimento desenfreado de
+        documentação nos repositórios, sem um padrão comum: cada desenvolvedor
+        acaba montando seu próprio setup, gerando resultados destoantes entre
+        pessoas do mesmo time.
+      </p>
+      <p>
+        BoB resolve isso com uma única fonte de verdade por projeto, que
+        qualquer agente e qualquer desenvolvedor segue da mesma forma.
+        Ferramentas específicas (Claude, Copilot, Cursor, Codex…) recebem só
+        um adaptador mínimo apontando de volta para <code>.ai/</code>, nunca
+        uma cópia divergente.
+      </p>
+    </section>
+
+    <section class="block" id="como-funciona">
+      <h2>Como funciona</h2>
+      <p class="sub">Nove camadas, cada uma com um papel claro.</p>
+      <ul class="layers">
+        <li><b>Constituição</b><span>princípios imutáveis</span></li>
+        <li><b>Instruções</b><span>comportamento de engenharia</span></li>
+        <li><b>Agentes</b><span>papéis</span></li>
+        <li><b>Skills</b><span>conhecimento especializado</span></li>
+        <li><b>Specs</b><span>o que deve ser construído</span></li>
+        <li><b>Workflows</b><span>como tarefas comuns são executadas</span></li>
+        <li><b>Comandos</b><span>como tarefas são acionadas</span></li>
+        <li><b>Contexto</b><span>conhecimento específico do projeto</span></li>
+        <li><b>Adaptadores</b><span>tornam tudo consumível por qualquer ferramenta de IA</span></li>
+      </ul>
+      <p><a class="more" href="https://github.com/lketerson/bob/tree/master/spec">Ler a especificação completa →</a></p>
+    </section>
+
+    <section class="block" id="quickstart">
+      <h2>Quickstart</h2>
+      <div class="cols">
+        <article class="card">
+          <h3>Novo projeto</h3>
+          <ol>
+            <li>Aponte seu agente de IA para o repositório do BoB e peça para seguir <a href="https://github.com/lketerson/bob/blob/master/start.md"><code>start.md</code></a>.</li>
+            <li>Rode o comando abaixo.</li>
+            <li>Responda o bootstrap interativo (idioma, ferramentas de IA, board, agentes, skills, MCPs) e aprove o preview antes da gravação.</li>
+            <li><code>.ai/</code> nasce estruturado para o projeto.</li>
+          </ol>
+        </article>
+        <article class="card">
+          <h3>Codebase existente</h3>
+          <ol>
+            <li>Mesmo ponto de partida: <code>start.md</code> e <code>/bob-start</code>.</li>
+            <li>O BoB descobre stack, docs e convenções antes de perguntar qualquer coisa.</li>
+            <li>Se já existir um <code>.ai/</code> de outra origem, ele pergunta se você quer migrar — nunca reorganiza em silêncio.</li>
+            <li>Rode <code>/bob-map-codebase</code> para mapear o contexto com evidência real.</li>
+          </ol>
+        </article>
+      </div>
+      <div class="copy">
+        <code id="start-cmd">/bob-start</code>
+        <button type="button" id="copy-btn" aria-label="Copiar comando">Copiar</button>
+      </div>
+    </section>
+
+    <section class="block" id="comandos">
+      <h2>Comandos</h2>
+
+      <h3>Essenciais</h3>
+      <dl class="cmds">
+        <div><dt>/bob-start</dt><dd>Configura o .ai/ na primeira vez, ou mostra o estado atual e os comandos.</dd></div>
+        <div><dt>/bob-map-codebase</dt><dd>Mapeia o repositório e atualiza o contexto em .ai/context/.</dd></div>
+        <div><dt>/bob-concerns</dt><dd>Audita SOLID, duplicação e nomenclatura.</dd></div>
+        <div><dt>/bob-create-agent</dt><dd>Cria um novo papel de agente.</dd></div>
+        <div><dt>/bob-create-skill</dt><dd>Cria uma skill do zero.</dd></div>
+        <div><dt>/bob-add-skill</dt><dd>Instala uma skill pronta de um marketplace.</dd></div>
+        <div><dt>/bob-add-mcp</dt><dd>Configura um servidor MCP a partir de um link.</dd></div>
+        <div><dt>/bob-create-spec</dt><dd>Cria a especificação de uma nova feature.</dd></div>
+        <div><dt>/bob-validate</dt><dd>Verifica se o .ai/ está completo e consistente, sem alterar nada.</dd></div>
+        <div><dt>/bob-update</dt><dd>Atualiza o BoB e aplica as novas regras no repositório.</dd></div>
+        <div><dt>/bob-adr</dt><dd>Registra uma decisão técnica como ADR.</dd></div>
+        <div><dt>/bob-onboarding</dt><dd>Guia um novo dev pelo repositório. <em>Opcional.</em></dd></div>
+      </dl>
+
+      <h3>Agentes</h3>
+      <p class="sub">Invocam um papel diretamente, sem passar pela orquestração do <code>/bob-techlead</code>.</p>
+      <dl class="cmds">
+        <div><dt>/bob-techlead</dt><dd>Divide a demanda por área e aciona os agentes certos, terminando com revisão.</dd></div>
+        <div><dt>/bob-architect</dt><dd>Planeja a implementação e compara alternativas.</dd></div>
+        <div><dt>/bob-developer</dt><dd>Implementa uma tarefa pontual.</dd></div>
+        <div><dt>/bob-reviewer</dt><dd>Revisa uma mudança já implementada.</dd></div>
+        <div><dt>/bob-tester</dt><dd>Define a estratégia e os casos de teste.</dd></div>
+        <div><dt>/bob-researcher</dt><dd>Pesquisa e compara opções técnicas.</dd></div>
+        <div><dt>/bob-security</dt><dd>Analisa a segurança de uma mudança ou área.</dd></div>
+        <div><dt>/bob-frontend</dt><dd>Cria ou revisa interface com o design system existente. <em>Opcional.</em></dd></div>
+      </dl>
+
+      <h3>User Story e cards <span class="tag">opcional</span></h3>
+      <p class="sub">Do happy path ao PR, para projetos que adotam o fluxo de US e cards.</p>
+      <dl class="cmds">
+        <div><dt>/bob-us-create</dt><dd>Cria a User Story com o happy path.</dd></div>
+        <div><dt>/bob-us-edge-cases</dt><dd>Completa com os edge cases, via perguntas.</dd></div>
+        <div><dt>/bob-us-plan</dt><dd>Gera a spec técnica da US aprovada.</dd></div>
+        <div><dt>/bob-us-to-task</dt><dd>Quebra a spec em cards de tarefa.</dd></div>
+        <div><dt>/bob-us-task-implement</dt><dd>Implementa uma task.</dd></div>
+        <div><dt>/bob-us-task-pr</dt><dd>Abre o PR de uma task para a branch da US.</dd></div>
+        <div><dt>/bob-us-sync-pr</dt><dd>Abre o PR que junta várias entregas da US.</dd></div>
+        <div><dt>/bob-us-pr-review</dt><dd>Faz uma revisão consultiva de um PR.</dd></div>
+        <div><dt>/bob-us-pr-adjust</dt><dd>Aplica os ajustes pedidos na revisão.</dd></div>
+      </dl>
+    </section>
+
+    <section class="block" id="faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Por que "BoB"?</summary>
+        <p><b>B</b>uild <b>o</b>n <b>B</b>ase — o nome do framework e do diretório canônico (<code>.ai/</code>) que ele cria em cada projeto.</p>
+      </details>
+      <details>
+        <summary>Por que a spec é dividida em vários arquivos?</summary>
+        <p>Um arquivo único obrigaria a carregar conteúdo irrelevante para a tarefa atual. <code>spec/</code> segue divulgação progressiva: leia só o que a tarefa precisa.</p>
+      </details>
+      <details>
+        <summary>Qual a diferença entre spec/ e templates/?</summary>
+        <p><code>spec/</code> define o que cada peça do <code>.ai/</code> deve conter e quais regras seguir. <code>templates/</code> é o conteúdo já pronto para copiar.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <span>BoB — Build on Base · <a href="https://github.com/lketerson/bob/blob/master/LICENSE">MIT</a></span>
+    <span>
+      <a href="https://github.com/lketerson/bob/blob/master/CHANGELOG.md">Changelog</a> ·
+      <a href="https://github.com/lketerson/bob/blob/master/CONTRIBUTING.md">Contribuir</a> ·
+      <a href="https://github.com/lketerson/bob">GitHub</a>
+    </span>
+  </footer>
+
+  <script>
+    var btn = document.getElementById("copy-btn");
+    var cmd = document.getElementById("start-cmd");
+    btn.addEventListener("click", function () {
+      var done = function () {
+        btn.textContent = "Copiado";
+        setTimeout(function () { btn.textContent = "Copiar"; }, 1500);
+      };
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(cmd.textContent).then(done, function () {});
+      }
+    });
+  </script>
+</body>
+</html>
