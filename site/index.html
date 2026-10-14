@@ -30,6 +30,7 @@
       <a href="#como-funciona">Como funciona</a>
       <a href="#quickstart">Quickstart</a>
       <a href="#comandos">Comandos</a>
+      <a href="#mudancas">Mudanças</a>
       <a href="#faq">FAQ</a>
       <a class="ext" href="https://github.com/lketerson/bob">GitHub <span aria-hidden="true">↗</span></a>
     </nav>
@@ -189,22 +190,138 @@
       <p class="empty" id="cmd-empty" hidden>Nenhum comando encontrado.</p>
     </section>
 
+    <section class="block" id="mudancas">
+      <h2>Mudanças recentes</h2>
+      <p class="sub">A versão mais recente, direto do <code>CHANGELOG.md</code>.</p>
+      <article class="release" id="release" aria-live="polite">
+        <div class="release-meta">
+          <p class="release-version" id="release-version">—</p>
+          <p class="release-date" id="release-date"></p>
+        </div>
+        <div class="release-body" id="release-body">
+          <p>Carregando…</p>
+        </div>
+      </article>
+      <p><a class="textlink" href="https://github.com/lketerson/bob/blob/master/CHANGELOG.md">Ver o changelog completo <span aria-hidden="true">→</span></a></p>
+    </section>
+
     <section class="block" id="faq">
       <h2>FAQ</h2>
-      <dl class="faq">
-        <div>
-          <dt>Por que “BoB”?</dt>
-          <dd><b>B</b>uild <b>o</b>n <b>B</b>ase: o nome do framework e do diretório canônico (<code>.ai/</code>) que ele cria em cada projeto.</dd>
-        </div>
-        <div>
-          <dt>Por que a spec é dividida em vários arquivos?</dt>
-          <dd>Um arquivo único obrigaria a carregar conteúdo que a tarefa não usa. <code>spec/</code> segue divulgação progressiva: leia só o que a tarefa pede.</dd>
-        </div>
-        <div>
-          <dt>Qual a diferença entre <code>spec/</code> e <code>templates/</code>?</dt>
-          <dd><code>spec/</code> define o que cada peça do <code>.ai/</code> deve conter e quais regras seguir. <code>templates/</code> é o conteúdo pronto para copiar.</dd>
-        </div>
-      </dl>
+
+      <div class="faq-group">
+        <h3>O básico</h3>
+        <dl class="faq">
+          <div>
+            <dt>O que é o BoB, na prática?</dt>
+            <dd>
+              <p>Uma especificação, não uma biblioteca nem uma CLI. São arquivos Markdown que o seu agente de IA lê para criar e manter o <code>.ai/</code> dentro do seu repositório: constituição, instruções, agentes, skills, specs, workflows, comandos e contexto do projeto.</p>
+              <p>O resultado também é só Markdown: legível por pessoas, versionável no Git e independente de qualquer ferramenta.</p>
+            </dd>
+          </div>
+          <div>
+            <dt>Por que “BoB”?</dt>
+            <dd><b>B</b>uild <b>o</b>n <b>B</b>ase. A ideia é que todo trabalho com IA no projeto seja construído sobre a mesma base, o <code>.ai/</code>, em vez de cada pessoa montar a sua.</dd>
+          </div>
+          <div>
+            <dt>Preciso instalar alguma coisa?</dt>
+            <dd>
+              <p>Não há pacote nem dependência. Você precisa de um agente de IA que leia e escreva arquivos no repositório, e de acesso ao BoB: pelo link do GitHub ou por um clone local.</p>
+              <p>O clone local é o caminho mais simples para atualizar depois, porque o <code>/bob-update</code> faz <code>git fetch</code> nele antes de comparar versões.</p>
+            </dd>
+          </div>
+          <div>
+            <dt>Quais ferramentas de IA funcionam?</dt>
+            <dd>
+              <p>Qualquer agente que leia arquivos. No bootstrap você escolhe quais ferramentas o time usa, e só elas recebem adaptador. A spec já descreve Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI e Windsurf. Para uma ferramenta fora dessa lista, o agente pergunta onde ela lê instruções e comandos.</p>
+              <p>O <code>AGENTS.md</code> é sempre criado, porque várias ferramentas já o leem nativamente. Em ferramentas sem slash commands, basta citar o arquivo de <code>.ai/commands/</code> na conversa.</p>
+            </dd>
+          </div>
+          <div>
+            <dt>Funciona com a minha stack?</dt>
+            <dd>Sim. A spec não assume linguagem, framework nem plataforma: serve para mobile, web, backend, desktop, monorepos e bibliotecas. O que é específico do seu projeto vem do <code>/bob-map-codebase</code>, que preenche <code>.ai/context/</code> com evidência real do código, como arquivos, padrões e convenções encontrados.</dd>
+          </div>
+          <div>
+            <dt>Em que o BoB difere de outras abordagens?</dt>
+            <dd>
+              <p>Muitas soluções resolvem uma parte do problema: um arquivo de instruções para uma ferramenta, ou um fluxo de specs isolado. O BoB organiza o conjunto inteiro em uma fonte canônica e trata cada ferramenta como um adaptador fino. Trocar ou adicionar uma IA não cria uma cópia das regras que diverge com o tempo.</p>
+              <p>Além disso, o próprio agente mantém o <code>.ai/</code> ao longo do projeto, sempre com preview, aprovação e um changelog próprio.</p>
+              <p>O BoB também vai além das regras para a IA e propõe o processo do time:</p>
+              <ul>
+                <li><b>Gitflow:</b> uma branch e um PR por tarefa, com gates de code review e de QA antes de chegar a produção.</li>
+                <li><b>Kanban:</b> um board com estados definidos, de <code>NEW</code> a <code>DONE/PROD</code>. Um card reprovado volta para o desenvolvimento com o motivo registrado.</li>
+                <li><b>Nomenclatura de branch:</b> o padrão <code>&lt;tipo&gt;/&lt;id&gt;-&lt;slug&gt;</code>, como <code>feat/1234-adicionar-botao-login</code>.</li>
+                <li><b>Onboarding de novos devs:</b> um agente opcional que avalia o nível técnico do dev, monta um roteiro de estudo, faz perguntas de verificação e propõe a correção de um bug controlado em uma branch local.</li>
+                <li><b>Modo Professor:</b> para devs menos experientes, o agente ensina a stack e a arquitetura ativamente. Ao final, o dev pode pedir que todos os agentes do projeto passem a explicar de forma mais didática.</li>
+              </ul>
+              <p>Se o time já tem convenção própria de Git, board ou branches, ela prevalece. Essas propostas valem só quando não há nada definido.</p>
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="faq-group">
+        <h3>No seu projeto</h3>
+        <dl class="faq">
+          <div>
+            <dt>O BoB altera meus arquivos sem perguntar?</dt>
+            <dd>
+              <p>Não. Toda gravação passa por um preview (<code>start.temp.md</code> ou <code>update.temp.md</code>) que você revisa e aprova antes de qualquer arquivo definitivo ser escrito.</p>
+              <p>Em uma migração, ele pode renomear arquivos e realocar informações, mas nunca reescreve nem resume o conteúdo existente. Se o repositório ainda não tem Git, ele recomenda copiar a pasta antes, para que dê para reverter.</p>
+            </dd>
+          </div>
+          <div>
+            <dt>Já tenho <code>CLAUDE.md</code>, regras do Cursor ou docs de IA. E agora?</dt>
+            <dd>Antes de perguntar qualquer coisa, o <code>/bob-start</code> inspeciona o repositório: stack, documentação, convenções de Git e arquivos de IA que já existem. Ele mostra o que encontrou e pergunta se você quer migrar para a estrutura do BoB. Nada é reorganizado em silêncio, e se você não quiser migrar, nada muda.</dd>
+          </div>
+          <div>
+            <dt>Devo commitar o <code>.ai/</code>?</dt>
+            <dd>
+              <p>A recomendação é commitar. O <code>.ai/</code> é a fonte de verdade do time: quando está no repositório, todo mundo trabalha com as mesmas regras, e mudanças nele são revisadas em PR como qualquer código.</p>
+              <p>Isso é só uma recomendação. Cada time pode usar como preferir, inclusive mantendo partes fora do Git.</p>
+            </dd>
+          </div>
+          <div>
+            <dt>O agente lê tudo a cada tarefa?</dt>
+            <dd>
+              <p>Não. O BoB usa divulgação progressiva: o agente sempre carrega as instruções gerais e o registro de erros corrigidos, e o resto só quando a tarefa pede. Uma tarefa de banco de dados, por exemplo, carrega a skill de banco, e uma de UI carrega a de UI. Isso economiza contexto e reduz ruído.</p>
+              <p>Pelo mesmo motivo, a própria spec é dividida em arquivos por tema, e o <code>start.md</code> indica o que ler para cada tipo de tarefa.</p>
+            </dd>
+          </div>
+          <div>
+            <dt>E quando duas regras entram em conflito?</dt>
+            <dd>Vale a ordem de precedência: restrições da plataforma, depois a constituição do projeto, as instruções, o papel do agente, as skills, a spec da feature e, por último, o pedido da tarefa. Assim, um pedido pontual não passa por cima de um princípio do projeto sem que isso fique explícito.</dd>
+          </div>
+          <div>
+            <dt>Preciso usar board, User Stories e cards?</dt>
+            <dd>Não. O fluxo de US e cards é opcional, e os comandos <code>/bob-us-*</code> só existem se o projeto adotar esse fluxo. Se o time já tem board e convenção de branch, o BoB segue o que existe. Se não tem nada, ele sugere um padrão (GitHub Projects, gratuito).</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="faq-group">
+        <h3>Versões e evolução</h3>
+        <dl class="faq">
+          <div>
+            <dt>Como recebo as novidades do BoB?</dt>
+            <dd>
+              <p>Rode <code>/bob-update</code>. Ele busca a versão mais recente do BoB, compara com a versão registrada no topo do <code>.ai/README.md</code>, resume em linguagem simples o que mudou e mostra o preview do que seria alterado.</p>
+              <p>Nada é aplicado sem aprovação, e uma mudança MAJOR nunca entra automaticamente. Se você recusar, o <code>.ai/</code> continua funcionando na versão anterior.</p>
+            </dd>
+          </div>
+          <div>
+            <dt>O projeto é estável?</dt>
+            <dd>O BoB já é usado em projetos diferentes, por pessoas diferentes, que propõem mudanças e melhorias o tempo todo. Por isso está em evolução constante. Toda mudança segue SemVer e entra no changelog, e as <a href="#mudancas">mudanças recentes</a> aparecem aqui no site.</dd>
+          </div>
+          <div>
+            <dt>Qual a diferença entre <code>spec/</code> e <code>templates/</code>?</dt>
+            <dd><code>spec/</code> define o que cada peça do <code>.ai/</code> deve conter e quais regras seguir. <code>templates/</code> traz o conteúdo pronto que o agente copia e adapta durante o bootstrap, como agentes, comandos e os arquivos de contexto.</dd>
+          </div>
+          <div>
+            <dt>Como contribuo?</dt>
+            <dd>Comece por uma <a href="https://github.com/lketerson/bob/issues">issue</a> descrevendo o quê e o porquê. Depois, uma branch por issue (<code>add</code>, <code>remove</code>, <code>improve</code> ou <code>fix</code>) e um PR com a entrada no <code>CHANGELOG.md</code>. Detalhes em <a href="https://github.com/lketerson/bob/blob/master/CONTRIBUTING.md"><code>CONTRIBUTING.md</code></a>.</dd>
+          </div>
+        </dl>
+      </div>
     </section>
   </main>
 
@@ -248,6 +365,85 @@
         });
         empty.hidden = any;
       });
+
+      // Latest CHANGELOG entry. The Pages workflow copies CHANGELOG.md into
+      // the site; the raw GitHub URL covers local previews.
+      var CHANGELOG_SOURCES = [
+        "CHANGELOG.md",
+        "https://raw.githubusercontent.com/lketerson/bob/master/CHANGELOG.md"
+      ];
+
+      function escapeHtml(s) {
+        return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+      }
+
+      function inline(s) {
+        return escapeHtml(s)
+          .replace(/`([^`]+)`/g, "<code>$1</code>")
+          .replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>")
+          .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2">$1</a>');
+      }
+
+      // Minimal markdown: paragraphs and "- " lists with wrapped lines.
+      function renderBlocks(lines) {
+        var html = "";
+        var para = [];
+        var items = [];
+        function flushPara() { if (para.length) { html += "<p>" + inline(para.join(" ")) + "</p>"; para = []; } }
+        function flushList() { if (items.length) { html += "<ul>" + items.map(function (i) { return "<li>" + inline(i) + "</li>"; }).join("") + "</ul>"; items = []; } }
+        lines.forEach(function (line) {
+          if (line.trim() === "") { flushPara(); flushList(); return; }
+          var item = line.match(/^[-*]\s+(.*)$/);
+          if (item) { flushPara(); items.push(item[1]); return; }
+          if (items.length && /^\s+\S/.test(line)) { items[items.length - 1] += " " + line.trim(); return; }
+          flushList();
+          para.push(line.trim());
+        });
+        flushPara();
+        flushList();
+        return html;
+      }
+
+      function latestEntry(md) {
+        var lines = md.replace(/\r\n?/g, "\n").split("\n");
+        var start = -1;
+        var head = null;
+        for (var i = 0; i < lines.length; i++) {
+          var m = lines[i].match(/^##\s+\[([^\]]+)\]\s*-\s*(\S+)/);
+          if (m) {
+            if (start === -1) { start = i; head = m; } else { return { version: head[1], date: head[2], body: lines.slice(start + 1, i) }; }
+          }
+        }
+        return head ? { version: head[1], date: head[2], body: lines.slice(start + 1) } : null;
+      }
+
+      function formatDate(iso) {
+        var d = new Date(iso + "T00:00:00");
+        if (isNaN(d)) { return iso; }
+        return d.toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric" });
+      }
+
+      var relVersion = document.getElementById("release-version");
+      var relDate = document.getElementById("release-date");
+      var relBody = document.getElementById("release-body");
+
+      function loadChangelog(i) {
+        if (i >= CHANGELOG_SOURCES.length) {
+          relBody.innerHTML = "<p>Não foi possível carregar o changelog agora.</p>";
+          return;
+        }
+        fetch(CHANGELOG_SOURCES[i], { cache: "no-cache" })
+          .then(function (r) { if (!r.ok) { throw new Error(r.status); } return r.text(); })
+          .then(function (md) {
+            var entry = latestEntry(md);
+            if (!entry) { throw new Error("no entry"); }
+            relVersion.textContent = "v" + entry.version;
+            relDate.innerHTML = '<time datetime="' + escapeHtml(entry.date) + '">' + escapeHtml(formatDate(entry.date)) + "</time>";
+            relBody.innerHTML = renderBlocks(entry.body);
+          })
+          .catch(function () { loadChangelog(i + 1); });
+      }
+      loadChangelog(0);
 
       var targets = document.querySelectorAll(".block");
       if ("IntersectionObserver" in window) {

@@ -114,14 +114,101 @@ Sintaxe e pré-condições de cada comando, com sintaxe e pré-condições de ca
 
 ## FAQ
 
-**Por que "BoB"?**
-**B**uild **o**n **B**ase — o nome do framework e do diretório canônico (`.ai/`) que ele cria em cada projeto.
+### O básico
 
-**Por que a spec é dividida em vários arquivos?**
-Um arquivo único cobrindo tudo obrigaria a carregar conteúdo irrelevante para a tarefa atual. `spec/` segue divulgação progressiva: leia só o que a tarefa precisa.
+#### O que é o BoB, na prática?
 
-**Qual a diferença entre `spec/` e `templates/`?**
-`spec/` define o que cada peça do `.ai/` deve conter e quais regras seguir. `templates/` é o conteúdo já pronto para copiar.
+Uma especificação, não uma biblioteca nem uma CLI. São arquivos Markdown que o seu agente de IA lê para criar e manter o `.ai/` dentro do seu repositório: constituição, instruções, agentes, skills, specs, workflows, comandos e contexto do projeto.
+
+O resultado também é só Markdown: legível por pessoas, versionável no Git e independente de qualquer ferramenta.
+
+#### Por que "BoB"?
+
+**B**uild **o**n **B**ase. A ideia é que todo trabalho com IA no projeto seja construído sobre a mesma base, o `.ai/`, em vez de cada pessoa montar a sua.
+
+#### Preciso instalar alguma coisa?
+
+Não há pacote nem dependência. Você precisa de um agente de IA que leia e escreva arquivos no repositório, e de acesso ao BoB: pelo link do GitHub ou por um clone local.
+
+O clone local é o caminho mais simples para atualizar depois, porque o `/bob-update` faz `git fetch` nele antes de comparar versões.
+
+#### Quais ferramentas de IA funcionam?
+
+Qualquer agente que leia arquivos. No bootstrap você escolhe quais ferramentas o time usa, e só elas recebem adaptador. A spec já descreve Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI e Windsurf ([`spec/11`](spec/11-adaptadores.md)). Para uma ferramenta fora dessa lista, o agente pergunta onde ela lê instruções e comandos.
+
+O `AGENTS.md` é sempre criado, porque várias ferramentas já o leem nativamente. Em ferramentas sem slash commands, basta citar o arquivo de `.ai/commands/` na conversa.
+
+#### Funciona com a minha stack?
+
+Sim. A spec não assume linguagem, framework nem plataforma: serve para mobile, web, backend, desktop, monorepos e bibliotecas. O que é específico do seu projeto vem do `/bob-map-codebase`, que preenche `.ai/context/` com evidência real do código, como arquivos, padrões e convenções encontrados.
+
+#### Em que o BoB difere de outras abordagens?
+
+Muitas soluções resolvem uma parte do problema: um arquivo de instruções para uma ferramenta, ou um fluxo de specs isolado. O BoB organiza o conjunto inteiro em uma fonte canônica e trata cada ferramenta como um adaptador fino. Trocar ou adicionar uma IA não cria uma cópia das regras que diverge com o tempo.
+
+Além disso, o próprio agente mantém o `.ai/` ao longo do projeto, sempre com preview, aprovação e um changelog próprio.
+
+O BoB também vai além das regras para a IA e propõe o processo do time:
+
+* **Gitflow:** uma branch e um PR por tarefa, com gates de code review e de QA antes de chegar a produção ([`spec/18`](spec/18-board-e-branch.md)).
+* **Kanban:** um board com estados definidos, de `NEW` a `DONE/PROD`. Um card reprovado volta para o desenvolvimento com o motivo registrado.
+* **Nomenclatura de branch:** o padrão `<tipo>/<id>-<slug>`, como `feat/1234-adicionar-botao-login`.
+* **Onboarding de novos devs:** um agente opcional que avalia o nível técnico do dev, monta um roteiro de estudo, faz perguntas de verificação e propõe a correção de um bug controlado em uma branch local.
+* **Modo Professor:** para devs menos experientes, o agente ensina a stack e a arquitetura ativamente. Ao final, o dev pode pedir que todos os agentes do projeto passem a explicar de forma mais didática.
+
+Se o time já tem convenção própria de Git, board ou branches, ela prevalece. Essas propostas valem só quando não há nada definido.
+
+### No seu projeto
+
+#### O BoB altera meus arquivos sem perguntar?
+
+Não. Toda gravação passa por um preview (`start.temp.md` ou `update.temp.md`) que você revisa e aprova antes de qualquer arquivo definitivo ser escrito.
+
+Em uma migração, ele pode renomear arquivos e realocar informações, mas nunca reescreve nem resume o conteúdo existente. Se o repositório ainda não tem Git, ele recomenda copiar a pasta antes, para que dê para reverter.
+
+#### Já tenho `CLAUDE.md`, regras do Cursor ou docs de IA. E agora?
+
+Antes de perguntar qualquer coisa, o `/bob-start` inspeciona o repositório: stack, documentação, convenções de Git e arquivos de IA que já existem ([`spec/13`](spec/13-descoberta-e-migracao.md)). Ele mostra o que encontrou e pergunta se você quer migrar para a estrutura do BoB. Nada é reorganizado em silêncio, e se você não quiser migrar, nada muda.
+
+#### Devo commitar o `.ai/`?
+
+A recomendação é commitar. O `.ai/` é a fonte de verdade do time: quando está no repositório, todo mundo trabalha com as mesmas regras, e mudanças nele são revisadas em PR como qualquer código.
+
+Isso é só uma recomendação. Cada time pode usar como preferir, inclusive mantendo partes fora do Git.
+
+#### O agente lê tudo a cada tarefa?
+
+Não. O BoB usa divulgação progressiva ([`spec/12`](spec/12-precedencia-e-divulgacao.md)): o agente sempre carrega as instruções gerais e o registro de erros corrigidos, e o resto só quando a tarefa pede. Uma tarefa de banco de dados, por exemplo, carrega a skill de banco, e uma de UI carrega a de UI. Isso economiza contexto e reduz ruído.
+
+Pelo mesmo motivo, a própria spec é dividida em arquivos por tema, e o [`start.md`](start.md) indica o que ler para cada tipo de tarefa.
+
+#### E quando duas regras entram em conflito?
+
+Vale a ordem de precedência: restrições da plataforma, depois a constituição do projeto, as instruções, o papel do agente, as skills, a spec da feature e, por último, o pedido da tarefa. Assim, um pedido pontual não passa por cima de um princípio do projeto sem que isso fique explícito.
+
+#### Preciso usar board, User Stories e cards?
+
+Não. O fluxo de US e cards é opcional, e os comandos `/bob-us-*` só existem se o projeto adotar esse fluxo. Se o time já tem board e convenção de branch, o BoB segue o que existe. Se não tem nada, ele sugere um padrão (GitHub Projects, gratuito).
+
+### Versões e evolução
+
+#### Como recebo as novidades do BoB?
+
+Rode `/bob-update`. Ele busca a versão mais recente do BoB, compara com a versão registrada no topo do `.ai/README.md`, resume em linguagem simples o que mudou e mostra o preview do que seria alterado ([`spec/20`](spec/20-versionamento.md)).
+
+Nada é aplicado sem aprovação, e uma mudança MAJOR nunca entra automaticamente. Se você recusar, o `.ai/` continua funcionando na versão anterior.
+
+#### O projeto é estável?
+
+O BoB já é usado em projetos diferentes, por pessoas diferentes, que propõem mudanças e melhorias o tempo todo. Por isso está em evolução constante. Toda mudança segue SemVer e entra no [`CHANGELOG.md`](CHANGELOG.md).
+
+#### Qual a diferença entre `spec/` e `templates/`?
+
+`spec/` define o que cada peça do `.ai/` deve conter e quais regras seguir. `templates/` traz o conteúdo pronto que o agente copia e adapta durante o bootstrap, como agentes, comandos e os arquivos de contexto.
+
+#### Como contribuo?
+
+Comece por uma issue descrevendo o quê e o porquê. Depois, uma branch por issue (`add`, `remove`, `improve` ou `fix`) e um PR com a entrada no `CHANGELOG.md`. Detalhes em [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Licença
 
